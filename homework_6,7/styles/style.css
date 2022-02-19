@@ -1,0 +1,300 @@
+/* header */
+
+ul.navigation {
+  margin: 0;
+  text-align: center;
+}
+
+ul.navigation li {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #828282;
+  display: inline-block;
+  margin-right: 40px;
+  margin: 25px 40px 30px 0;
+}
+
+.navigation-list {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #828282;
+  margin-right: 40px;
+  text-decoration: none;
+}
+
+.navigation-line {
+  margin: auto;
+  width: 940px;
+  color: black;
+}
+
+/* Main */
+
+div.banner {
+  margin: auto;
+  background-color: white;
+  height: 525px;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+div.banner h1 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 47.3392px;
+  line-height: 64px;
+  color: black;
+  padding-right: 670px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 46px;
+  text-align: center;
+  color: black;
+}
+
+div.about-me-section {
+  margin: auto;
+  background-color: #f6f6f6;
+  height: 520px;
+  text-align: center;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+div.about-me-section h2 {
+  padding-top: 100px;
+  margin-bottom: 30px;
+}
+
+div.about-me-section p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: black;
+}
+
+.about-me-section-margin {
+  margin-bottom: 40px;
+}
+
+/* Skills */
+
+div.skills-section {
+  margin: auto;
+  background-color: white;
+  height: 580px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+div.skills-section h2 {
+  margin-bottom: 45px;
+}
+
+.skills-section-p {
+  margin-bottom: 80px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: black;
+}
+
+/* Picture */
+
+div.skills-section-pictures div {
+  display: inline-block;
+}
+
+div.skills-section-img {
+  margin: 0 170px 30px 0;
+}
+
+div.skills-section-img-img {
+  margin: 0 0 30px 0;
+}
+
+/* Name of picture */
+
+div.skills-section-img-name p {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 70px;
+}
+
+.skills-section-img-name-name {
+  font-family: Gilroy-Bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #828282;
+  margin: 30px 190px 60px 0px;
+}
+
+.skills-section-img-name-name-name {
+  font-family: Gilroy-Bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #828282;
+  margin: 30px 40px 60px 0;
+}
+
+/* Stars */
+
+.skills-section-stars div {
+  display: inline-block;
+}
+
+.skills-section-stars-first {
+  margin: 60px 80px 85px 0;
+}
+
+.skills-section-stars-second {
+  margin: 60px 80px 85px 0;
+}
+
+.skills-section-stars-third {
+  margin: 60px 80px 85px 0;
+}
+
+.skills-section-stars-four {
+  margin: 60px 0px 85px 0;
+}
+
+div.portfolio-section {
+  background: #f6f6f6;
+  height: 2240px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+div.portfolio-section h2 {
+  margin-bottom: 70px;
+}
+
+.portfolio-section-web {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #070707;
+  text-align: center;
+}
+
+div.portfolio-section p {
+  margin-top: 130px;
+  margin-bottom: 15px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #070707;
+  text-align: center;
+}
+
+/* Contacts */
+
+.contacts-section {
+  margin: auto;
+  background-color: white;
+  height: 670px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.contacts-section h2 {
+  margin-bottom: 100px;
+}
+
+.contacts-section-quest {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #070707;
+}
+
+.contacts-section-p {
+  margin-bottom: 90px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #070707;
+}
+
+.contacts-section .btn {
+  border: #070707;
+  border-radius: 25px;
+  background-color: #070707;
+  color: white;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  padding: 8px 10px 8px 10px;
+  text-decoration: none;
+}
+
+.contacts-section-pictures div {
+  display: inline-block;
+}
+
+.contacts-section-img {
+  margin: 50px 90px 45px 0;
+}
+
+.contacts-section-img-img {
+  margin: 50px 0 45px 0;
+}
+
+.footer {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #828282;
+}
