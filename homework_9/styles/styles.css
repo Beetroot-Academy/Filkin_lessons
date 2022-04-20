@@ -1,17 +1,26 @@
+.wrapper {
+  max-width: 1125px;
+  margin: 0 auto;
+}
+  
+/* Header */
+
   header {
-    margin: 45px 145px 100px 105px;
+    padding-top: 25px;
   }
-  
-  
-  .nav li {
-    display: inline;
+
+  .nav-header {
     float: right;
   }
-  
+
   .header-logo {
     float: left;
   }
-  
+
+  .nav-header li {
+    display: inline-block;
+  }
+
   .nav-item {
     font-family: Poppins;
     font-style: normal;
@@ -56,16 +65,17 @@
   
   /* Main */
   
-  main div {
-    display: inline-block;
+  .main-section {
+  display: inline-block;
+  margin-top: 60px;
+}
+
+  .main-section-content {
+  float: left;
+  width: 50%;
   }
   
-  .main-left {
-    float: left;
-    margin: 0 65px 0 145px;
-  }
-  
-  .main-section h1 {
+  .main-section-content h1 {
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
@@ -77,7 +87,7 @@
     padding-top: 140px;
   }
   
-  .main-section h2 {
+  .main-section-content p {
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
@@ -88,7 +98,7 @@
     margin-bottom: 45px;
   }
   
-  .btn-get-started {
+  .btn-orange {
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
@@ -116,30 +126,63 @@
     text-decoration: none;
   }
   
-  .main-img {
+  .main-section-img {
     float: right;
-    margin: 50px 130px 110px 0;
+    width: 50%;
   }
 
 /* Second section */
 
-  .second-section-title {
+  .second-section {
+    margin: 110px 0 55px 0;
+    width: 100%;
+  }
+
+  .second-section h2 {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
     line-height: 54px;
     color: #2F281E;
-    width: 540px;
-    height: 110px;
+    text-align: center;
+    margin-bottom: 55px;
   }
 
-  .second-section-pictures {
+  .second-section-blocks {
     display: flex;
     flex-direction: row;
-    margin-left: 160px;
   }
 
-  .second-section-card-item-img-img {
-    margin-left: 235px;
+  .second-section-block {
+    width: 20%;
+    margin-right: 45px;
+  }
+
+  .second-section img {
+    margin-bottom: 45px;
+  }
+
+  .second-section h3 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: #2F281E;
+    margin-bottom: 15px;
+  }
+
+  .second-section p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #544837;
+  }
+
+  .btn-sign {
+    margin: 35px auto 210px auto;
+    text-align: center;
   }
