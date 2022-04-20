@@ -1,11 +1,11 @@
 /* header */
 
-ul.navigation {
+.navigation {
   margin: 0;
   text-align: center;
 }
 
-ul.navigation li {
+.navigation li {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -17,7 +17,7 @@ ul.navigation li {
   margin: 25px 40px 30px 0;
 }
 
-.navigation-list {
+.navigation-item {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -36,7 +36,7 @@ ul.navigation li {
 
 /* Main */
 
-div.banner {
+.banner {
   margin: auto;
   background-color: white;
   height: 525px;
@@ -46,7 +46,12 @@ div.banner {
   width: 100%;
 }
 
-div.banner h1 {
+.banner img {
+  width: 950px;
+  height: 390px;
+}
+
+.banner h1 {
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
@@ -67,7 +72,7 @@ h2 {
   color: black;
 }
 
-div.about-me-section {
+.about-me-section {
   margin: auto;
   background-color: #f6f6f6;
   height: 520px;
@@ -76,12 +81,12 @@ div.about-me-section {
   width: 100%;
 }
 
-div.about-me-section h2 {
+.about-me-section h2 {
   padding-top: 100px;
   margin-bottom: 30px;
 }
 
-div.about-me-section p {
+.about-me-section p {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -89,28 +94,25 @@ div.about-me-section p {
   line-height: 25px;
   text-align: center;
   color: black;
-}
-
-.about-me-section-margin {
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
+  width: 450px;
 }
 
 /* Skills */
 
-div.skills-section {
-  margin: auto;
+.skills-section {
   background-color: white;
   height: 580px;
   width: 100%;
   text-align: center;
-  margin-bottom: 100px;
+  display: inline-block;
 }
 
-div.skills-section h2 {
+.skills-section h2 {
   margin-bottom: 45px;
 }
 
-.skills-section-p {
+.skills-section-title {
   margin-bottom: 80px;
   font-family: Open Sans;
   font-style: normal;
@@ -121,82 +123,55 @@ div.skills-section h2 {
   color: black;
 }
 
-/* Picture */
-
-div.skills-section-pictures div {
-  display: inline-block;
+.skills-section-blocks {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
-div.skills-section-img {
-  margin: 0 170px 30px 0;
+.skills-section-block {
+  width: 25%;
 }
 
-div.skills-section-img-img {
-  margin: 0 0 30px 0;
+.skills-section-img img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 25px;
 }
 
-/* Name of picture */
-
-div.skills-section-img-name p {
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  width: 70px;
-}
-
-.skills-section-img-name-name {
+.skills-section-img-name {
   font-family: Gilroy-Bold;
   font-size: 14px;
   line-height: 17px;
-  text-align: center;
   color: #828282;
-  margin: 30px 190px 60px 0px;
+  margin-bottom: 60px;
 }
 
-.skills-section-img-name-name-name {
-  font-family: Gilroy-Bold;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  color: #828282;
-  margin: 30px 40px 60px 0;
-}
-
-/* Stars */
-
-.skills-section-stars div {
-  display: inline-block;
-}
-
-.skills-section-stars-first {
-  margin: 60px 80px 85px 0;
-}
-
-.skills-section-stars-second {
-  margin: 60px 80px 85px 0;
-}
-
-.skills-section-stars-third {
-  margin: 60px 80px 85px 0;
+.skills-section-stars-three {
 }
 
 .skills-section-stars-four {
-  margin: 60px 0px 85px 0;
 }
 
-div.portfolio-section {
+/* Portfolio */
+
+.portfolio-section {
   background: #f6f6f6;
   height: 2240px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 100px 0;
   padding-top: 100px;
   text-align: center;
-  margin-bottom: 100px;
 }
 
-div.portfolio-section h2 {
+.portfolio-section h2 {
   margin-bottom: 70px;
+}
+
+.portfolio-section-img {
+  margin: 140px auto 15px auto;
+  width: 940px;
+  height: 510px;
 }
 
 .portfolio-section-web {
@@ -208,39 +183,23 @@ div.portfolio-section h2 {
   text-align: center;
   text-decoration-line: underline;
   color: #070707;
-  text-align: center;
-}
-
-div.portfolio-section p {
-  margin-top: 130px;
-  margin-bottom: 15px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 25px;
-  text-align: center;
-  text-decoration-line: underline;
-  color: #070707;
-  text-align: center;
+  width: 280px;
 }
 
 /* Contacts */
 
 .contacts-section {
-  margin: auto;
   background-color: white;
   height: 670px;
   width: 100%;
   text-align: center;
-  margin-bottom: 100px;
 }
 
 .contacts-section h2 {
   margin-bottom: 100px;
 }
 
-.contacts-section-quest {
+.contacts-section-text {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -248,17 +207,8 @@ div.portfolio-section p {
   line-height: 25px;
   text-align: center;
   color: #070707;
-}
-
-.contacts-section-p {
-  margin-bottom: 90px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 25px;
-  text-align: center;
-  color: #070707;
+  width: 275px;
+  margin: 0 auto 90px auto;
 }
 
 .contacts-section .btn {
@@ -277,19 +227,18 @@ div.portfolio-section p {
   text-decoration: none;
 }
 
-.contacts-section-pictures div {
+.contacts-section-images {
   display: inline-block;
+  margin: 60px auto 45px auto;
 }
 
-.contacts-section-img {
-  margin: 50px 90px 45px 0;
+.contacts-section-img:not(:last-child) {
+  width: 40px;
+  height: 40px;
+  margin-right: 60px;
 }
 
-.contacts-section-img-img {
-  margin: 50px 0 45px 0;
-}
-
-.footer {
+.footer-item {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
