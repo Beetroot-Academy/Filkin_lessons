@@ -45,8 +45,13 @@ li span {
 }
 
 li i {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
     color: #FFFFFF;
-    font-size: 22px;
 }
 
 li.Lisbon {
@@ -119,10 +124,10 @@ li p {
 margin-bottom: 5px;
 }
 
-.content {
-    
+ul:hover > li {
+    opacity: 0.5; 
 }
 
-li:hover {
-    opacity: 0.5;
+ul:hover > li:hover {
+    opacity: 1.0; 
 }
