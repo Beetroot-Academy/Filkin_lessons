@@ -24,14 +24,24 @@ li.item {
     padding-bottom: 3vh;
 }
 
-li span {
+li p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     color: #FFFFFF;
-    display: inline-block; 
+    margin-right: 5px;
+}
+
+li span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
 }
 
 li i {
@@ -109,10 +119,10 @@ li p {
 margin-bottom: 5px;
 }
 
-.content:hover {
-    opacity: 0.5;
+.content {
+    
 }
 
 li:hover {
-    opacity: 1.0;
+    opacity: 0.5;
 }
