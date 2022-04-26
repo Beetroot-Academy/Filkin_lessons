@@ -45,7 +45,7 @@ body {
 
 /* Header */
 
-header {
+.header {
     height: 150px;
     padding-top: 60px;
 }
@@ -59,11 +59,6 @@ header {
 .header-logo {
     width: 110px;
     height: 30px;
-}
-
-nav {
-    overflow: hidden;
-    width: 50%;
 }
 
 .nav-item {
@@ -80,20 +75,25 @@ nav {
     margin-left: 75px;
 }
 
-/* Main Section */
+/* About Section */
 
-.main-section {
+.about-section {
     width: 100%;
-    height: 500px;
-    margin-bottom: 175px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
 }
 
-.main-section-left {
+.about-section-left {
     width: 50%;
-    float: left;
 }
 
-.main-section-left h1 {
+.about-section-right {
+    width: 532px;
+    height: 532px;
+}
+
+.about-section-left h1 {
     font-family: 'Circular Std';
     font-style: normal;
     font-weight: 500;
@@ -103,13 +103,13 @@ nav {
     margin-bottom: 30px;
 }
 
-.main-section-left h1::before {
+.about-section-left h1::before {
     content: "__";
     font-size: 30px;
     font-weight: 800;
 }
 
-.main-section-left h2 {
+.about-section-left h2 {
     font-family: 'Circular Std';
     font-style: normal;
     font-weight: 700;
@@ -119,7 +119,7 @@ nav {
     margin-bottom: 50px;
 }
 
-.main-section-left p {
+.about-section-left p {
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 400;
@@ -130,7 +130,7 @@ nav {
     margin-bottom: 80px;
 }
 
-.main-section-icon {
+.about-section-icon {
     vertical-align: middle;
 }
 
@@ -147,20 +147,19 @@ nav {
     text-decoration: none;
 }
 
-.main-section-img img {
+.about-section-right img {
     width: 532px;
     height: 532px;
-    float: right;
 }
 
-/* Second Section */
+/* service Section */
 
-.second-section {
+.service-section {
     margin: 0 auto;
     text-align: center;
 }
 
-.second-section h3 {
+.service-section h3 {
     font-family: 'Circular Std';
     font-style: normal;
     font-weight: 500;
@@ -171,7 +170,7 @@ nav {
     margin-bottom: 10px;
 }
 
-.second-section h2 {
+.service-section h2 {
     font-family: 'Circular Std';
     font-style: normal;
     font-weight: 700;
@@ -181,13 +180,13 @@ nav {
     margin: 0 auto 60px auto;
 }
 
-.second-section-blocks {
+.service-section-blocks {
     display: flex;
     flex-direction: row;
     margin-bottom: 150px;
 }
 
-.second-section-blocks-item {
+.service-section-blocks-item {
     width: 25%;
     height: 310px;
     background: #FFF1F9;
@@ -195,7 +194,7 @@ nav {
     box-sizing: border-box;
 }
 
-.second-section-blocks-item h4 {
+.service-section-blocks-item h4 {
     font-family: 'Circular Std';
     font-style: normal;
     font-weight: 500;
@@ -204,7 +203,7 @@ nav {
     color: #56597A;
 }
 
-.second-section-blocks-item-text {
+.service-section-blocks-item-text {
     font-family: 'Proxima Nova';
     font-style: normal;
     font-weight: 400;
@@ -216,14 +215,14 @@ nav {
     margin: 0 auto;
 }
 
-.second-section-blocks-item span {
+.service-section-blocks-item span {
     color: #FC85B4;
     font-size: 40px;
     padding-top: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-.second-section-blocks-item-text-hidden {
+.service-section-blocks-item-text-hidden {
     font-family: 'Circular Std';
     font-style: normal;
     font-weight: 500;
@@ -234,32 +233,24 @@ nav {
     display: none;
 }
 
-.second-section-blocks-item + .second-section-blocks-item {
+.service-section-blocks-item + .service-section-blocks-item {
     margin-left: 30px;
 }
 
-.second-section-blocks-item:hover {
+.service-section-blocks-item:hover {
     background: #F78CB6;
     height: 330px;
 
 }
 
-.second-section-blocks-item:hover > h4 {
+.service-section-blocks-item:hover > h4, p, span {
     color: white;
 }
 
-.second-section-blocks-item:hover > p {
-    color: white;
-}
-
-.second-section-blocks-item:hover > span {
-    color: white;
-}
-
-.second-section-blocks-item:active {
+.service-section-blocks-item:active {
     opacity: 0.5;
 }
 
-.second-section-blocks-item:hover > .second-section-blocks-item-text-hidden {
+.service-section-blocks-item:hover > .service-section-blocks-item-text-hidden {
     display: block;
 }
