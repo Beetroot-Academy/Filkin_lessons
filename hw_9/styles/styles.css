@@ -1,0 +1,318 @@
+@font-face {
+    font-family: 'Circular Std';
+    src: url('../fonts/CircularStd-Book.eot');
+    src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CircularStd-Book.woff') format('woff'),
+        url('../fonts/CircularStd-Book.ttf') format('truetype'),
+        url('../fonts/CircularStd-Book.svg#CircularStd-Book') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('../fonts/CircularStd-Bold.eot');
+    src: url('../fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CircularStd-Bold.woff') format('woff'),
+        url('../fonts/CircularStd-Bold.ttf') format('truetype'),
+        url('../fonts/CircularStd-Bold.svg#CircularStd-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNova-Regular.eot');
+    src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Regular.woff') format('woff'),
+        url('../fonts/ProximaNova-Regular.ttf') format('truetype'),
+        url('../fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: white;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    color: #F78CB6;
+}
+
+h2 {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+    color: #56597A;
+}
+
+h3 {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    color: #F78CB6;
+    text-shadow: black 1px 0px, black 1px 1px, black 0px 1px, black -1px 1px, black -1px 0px, black -1px -1px, black 0px -1px, black 1px -1px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 72px;
+    color: #56597A;
+}
+
+h5 {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 72px;
+    color: #56597A;
+}
+
+.btn {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF; 
+    background-color: #F78BB6;
+    border-radius: 4px;
+    padding: 20px 22px;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header */
+
+.header-wrapper {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.header::after {
+    content: "";
+    background-color: white;
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+}
+
+.header ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-logo {
+    width: 110px;
+    height: 30px;
+}
+
+.nav-item {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #56597A;
+    text-decoration: none;
+}
+
+.nav-space + .nav-space {
+    margin-left: 75px;
+}
+
+/* About Section */
+
+.about-section {
+    margin-top: 200px;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-section::before {
+    content: '';
+    height: 880px;
+    width: 880px;
+    background-image: url(../images/Vector.png);
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    right: 0px;
+    }
+
+.about-section-left {
+    width: 50%;
+}
+
+.about-section-img {
+    width: 532px;
+    height: 532px;
+    max-width: 100%;
+}
+
+.about-section h1 {
+    margin-bottom: 30px;
+}
+
+.about-section-left h1::before {
+    content: "__";
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.about-section h2 {
+    margin-bottom: 30px;
+}
+
+.about-section-left p {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    color: #919299;
+    margin-bottom: 75px;
+}
+
+.about-section-icon {
+    vertical-align: middle;
+}
+
+/* Service Section */
+
+.service-section {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-section::before {
+    content: '';
+    height: 420px;
+    width: 220px;
+    background-image: url(../images/Bloobs.png);
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    bottom: -200px;
+    left: 0px;
+}
+
+.service-section-list {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 150px;
+}
+
+.service-section-block {
+    width: 25%;
+    height: 310px;
+    background: #FFF1F9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.6s ease-in-out;
+}
+
+.service-section h4 {
+    margin-bottom: 60px;
+}
+
+.service-section-block-text {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #919299;
+    width: 85%;
+    margin: 0 auto;
+}
+
+span.service-icons {
+    color: #FC85B4;
+    font-size: 40px;
+    padding-top: 60px;
+    margin-bottom: 30px;
+}
+
+.service-section-block-text-hidden {
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    padding-top: 40px;
+    display: none;
+}
+
+.service-section-block + .service-section-block {
+    margin-left: 30px;
+}
+
+.service-section-block:hover {
+	background:#F78CB6;
+    height: 330px;
+    animation: roll 5s infinite;
+    transform: rotateZ(360deg);
+    box-shadow: 0px 0px 19px 7px #F78CB6;
+    transition: all 0.6s ease-in-out;
+}
+
+.service-section-block:hover > h5 {
+    color: white;
+    transition: color 0.6s ease-in-out;
+}
+
+.service-section-block:hover > span {
+    color: white;
+    transition: color 0.6s ease-in-out;
+}
+
+.service-section-block:hover > p {
+    color: white;
+    transition: color 0.6s ease-in-out;
+}
+
+.service-section-block:hover > .service-section-block-text-hidden {
+    display: block;
+}
