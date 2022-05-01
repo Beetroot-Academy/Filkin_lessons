@@ -40,7 +40,7 @@ body {
 
 .wrapper {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 300px auto;
 }
 
 img {
@@ -93,6 +93,8 @@ img {
     letter-spacing: 0.02em;
     color: #919299;
     margin-bottom: 55px;
+    padding-right: 40px; 
+    box-sizing: border-box;
 }
 
 .btn {
@@ -104,8 +106,9 @@ img {
     color: #FFFFFF; 
     background-color: #F78BB6;
     border-radius: 4px;
-    padding: 20px 22px;
+    padding: 15px;
     text-decoration: none;
+    display: inline-block;
 }
 
 /* Background */
@@ -129,7 +132,7 @@ img {
     background-image: url(../images/Bloobs.png);
     background-size: cover;
     position: absolute;
-    z-index: 0;
+    z-index: 2;
     bottom: -250px;
     left: 0px;
 }
@@ -141,9 +144,9 @@ img {
     background-image: url(../images/Bloobs2.png);
     background-size: cover;
     position: absolute;
-    z-index: 0;
     bottom: -1600px;
     right: 0px;  
+    z-index: 2;
 }
 
 .test-section::before {
@@ -153,9 +156,9 @@ img {
     background-image: url(../images/Bloobs.png);
     background-size: cover;
     position: absolute;
-    z-index: 0;
-    bottom: -2350px;
+    bottom: -2100px;
     left: 0px;
+    z-index: 2;
 }
 
 /* Header */
@@ -170,6 +173,7 @@ img {
     left: 0;
     right: 0;
     z-index: 3;
+    box-sizing: border-box;
 }
 
 .header::after {
@@ -218,18 +222,16 @@ img {
 }
 
 .wrapper--right {
-    margin-top: 100px;
+    margin-bottom: 150px;
     width: 100%;
-    height: 600px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
 }
 
 .wrapper--left {
-    margin-top: 100px;
+    margin-bottom: 150px;
     width: 100%;
-    height: 600px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -240,13 +242,15 @@ img {
 }
 
 .section__img {
-    z-index: 0;
+    z-index: 3;
+    padding-right: 80px;
 }
 
 /* About Section */
 
 .about-section {
     margin-top: 200px;
+    margin-bottom: 150px;
 }
 
 .about-section__title {
@@ -265,22 +269,21 @@ img {
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
-    height: 600px;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .service-section__list {
     display: flex;
     flex-direction: row;
     margin-bottom: 150px;
+    align-items: start;
 }
 
 .service-section__item {
     width: 25%;
-    height: 310px;
     background: #FFF1F9;
     border-radius: 8px;
-    box-sizing: border-box;
     transition: all 0.6s ease-in-out;
 }
 
@@ -293,6 +296,7 @@ span.service__icon {
     font-size: 40px;
     padding-top: 60px;
     margin-bottom: 30px;
+    box-sizing: border-box;
 }
 
 .service-section__title {
@@ -304,6 +308,10 @@ span.service__icon {
     color: #56597A;
 } 
 
+.service__subtitle {
+    margin-bottom: 60px;
+}
+
 .service-section__text {
     font-family: 'Proxima Nova';
     font-style: normal;
@@ -312,8 +320,9 @@ span.service__icon {
     line-height: 24px;
     text-align: center;
     color: #919299;
-    width: 85%;
+    padding: 0 20px 40px 20px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .service-section__text--hidden {
@@ -323,13 +332,12 @@ span.service__icon {
     font-size: 20px;
     line-height: 30px;
     color: #FFFFFF;
-    padding-top: 40px;
-    display: none;
+    visibility: hidden;
+    box-sizing: border-box;
 }
 
 .service-section__item:hover {
 	background:#F78CB6;
-    height: 330px;
     animation: roll 5s infinite;
     transform: rotateZ(360deg);
     box-shadow: 0px 0px 19px 7px #F78CB6;
@@ -352,33 +360,20 @@ span.service__icon {
 }
 
 .service-section__item:hover > .service-section__text--hidden {
-    display: block;
-}
-
-/* Design Section */
-
-.design__subtitle {
-    width: 485px;
+    visibility: inherit;
 }
 
 /* Teamwork Section */
 
-.teamwork__text {
-    margin-top: 80px;
-}
-
 .teamwork__subtitle {
-    width: 490px;
+   padding-right: 40px; 
+   box-sizing: border-box;
 }
 
 /* Testimaonial Section  */
 
-.test-section {
-    margin-top: 200px;
-}
-
 .quote {
-    width: 70%;
+    padding-right: 180px;
 }
 
 .quote--autor {
@@ -400,5 +395,6 @@ span.service__icon {
 }
 
 .test__subtitle {
-    width: 510px;
+   padding-right: 80px;
+   box-sizing: border-box;
 }
