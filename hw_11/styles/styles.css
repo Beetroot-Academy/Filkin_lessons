@@ -219,8 +219,9 @@ label {
     color: white;
 }
 
-.btn:active {
+.btn:hover {
     background-color: #ffffff;
+    color: #fea4dd;
 }
 
 .link__log {
