@@ -208,18 +208,19 @@ label {
 }
 
 .btn {
-    background-color: white;
+    background-color: #fea4dd;
     outline: none;
-    border: 1px solid #E4E4E4;
+    border: 1px solid #fea4dd;
     box-sizing: border-box;
     border-radius: 4px;
     margin-bottom: 25px;
     width: 49%;
     padding: 8px 0;
+    color: white;
 }
 
 .btn:active {
-    background-color: #f7c1e3;
+    background-color: #ffffff;
 }
 
 .link__log {
