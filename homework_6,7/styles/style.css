@@ -1,0 +1,249 @@
+/* header */
+
+.navigation {
+  margin: 0;
+  text-align: center;
+}
+
+.navigation li {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #828282;
+  display: inline-block;
+  margin-right: 40px;
+  margin: 25px 40px 30px 0;
+}
+
+.navigation-item {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #828282;
+  margin-right: 40px;
+  text-decoration: none;
+}
+
+.navigation-line {
+  margin: auto;
+  width: 940px;
+  color: black;
+}
+
+/* Main */
+
+.banner {
+  margin: auto;
+  background-color: white;
+  height: 525px;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.banner img {
+  width: 950px;
+  height: 390px;
+}
+
+.banner h1 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 47.3392px;
+  line-height: 64px;
+  color: black;
+  padding-right: 670px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 46px;
+  text-align: center;
+  color: black;
+}
+
+.about-me-section {
+  margin: auto;
+  background-color: #f6f6f6;
+  height: 520px;
+  text-align: center;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.about-me-section h2 {
+  padding-top: 100px;
+  margin-bottom: 30px;
+}
+
+.about-me-section p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: black;
+  margin: 0 auto 40px auto;
+  width: 450px;
+}
+
+/* Skills */
+
+.skills-section {
+  background-color: white;
+  height: 580px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.skills-section h2 {
+  margin-bottom: 45px;
+}
+
+.skills-section-title {
+  margin-bottom: 80px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: black;
+}
+
+.skills-section-blocks {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.skills-section-block {
+  width: 25%;
+}
+
+.skills-section-img img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 25px;
+}
+
+.skills-section-img-name {
+  font-family: Gilroy-Bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #828282;
+  margin-bottom: 60px;
+}
+
+.skills-section-stars-three {
+}
+
+.skills-section-stars-four {
+}
+
+/* Portfolio */
+
+.portfolio-section {
+  background: #f6f6f6;
+  height: 2240px;
+  width: 100%;
+  margin: 0 auto 100px 0;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  margin-bottom: 70px;
+}
+
+.portfolio-section-img {
+  margin: 140px auto 15px auto;
+  width: 940px;
+  height: 510px;
+}
+
+.portfolio-section-web {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #070707;
+  width: 280px;
+}
+
+/* Contacts */
+
+.contacts-section {
+  background-color: white;
+  height: 670px;
+  width: 100%;
+  text-align: center;
+}
+
+.contacts-section h2 {
+  margin-bottom: 100px;
+}
+
+.contacts-section-text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #070707;
+  width: 275px;
+  margin: 0 auto 90px auto;
+}
+
+.contacts-section .btn {
+  border: #070707;
+  border-radius: 25px;
+  background-color: #070707;
+  color: white;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  padding: 8px 10px 8px 10px;
+  text-decoration: none;
+}
+
+.contacts-section-images {
+  display: inline-block;
+  margin: 60px auto 45px auto;
+}
+
+.contacts-section-img:not(:last-child) {
+  width: 40px;
+  height: 40px;
+  margin-right: 60px;
+}
+
+.footer-item {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #828282;
+}
