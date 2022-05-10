@@ -183,6 +183,7 @@ body::after {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   transition: color 0.3s ease-in-out;
   cursor: pointer;
+  z-index: 3;
 }
 .service__item:hover {
   background-color: #ff6033;
