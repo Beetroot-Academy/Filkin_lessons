@@ -5,53 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cahee</title>
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header wrapper">
-        <div class="logo">
-            <img src="images/logo.png" alt="Cahee">
-        </div>
+    <header class="header">
+        <div class="header__wrapper wrapper">
+            <div class="logo">
+                <a class="logo--link" href="#">
+                    <img src="/hw_13/images/logo.png" alt="Logo">
+                </a>
+            </div>
 
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">hero</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Services</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Gallery</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
-            </ul>
-        </nav>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Gallery</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero__text">
-                <h1 class="title">Fresh Life</h1>
-                <p class="description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco.</p>
-                <button class="btn">GET FREE NOW</button>
+            <div class="hero__wrapper wrapper">
+                <div class="hero__text">
+                    <h1 class="hero__title title">Fresh Life</h1>
+                    <p class="hero__desc desc">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco.</p>
+                    <button class="btn">GET FREE NOW</button>
+                </div>
             </div>
         </section>
 
         <section class="service">
-            <div class="service__text">
-                <ul class="service__list">
-                    <li class="service__item">Online Shopping</li>
-                    <li class="service__item">Quality Product</li>
-                    <li class="service__item">Domestic & International Delivery</li>
-                    <li class="service__item">Well Organized</li>
-                </ul>
-            </div>
+            <div class="service__wrapper wrapper">
+                <div class="service__text">
+                    <ul class="service__list">
+                        <li class="service__item">
+                            <a class="service__link" href="#">
+                                <span class="service__text">Online Shopping</span>
+                                <span class="service__icon--wrapper">
+                                    <svg class="service__icon--item icon--shop">
+                                        <use xlink:href="/hw_13/images/sprite.svg#shop"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="service__item">
+                            <a class="service__link" href="#">
+                                <span class="service__text">Quality Product</span>
+                                <span class="service__icon--wrapper">
+                                    <svg class="service__icon--item icon--plant">
+                                        <use xlink:href="/hw_13/images/sprite.svg#plant"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="service__item">
+                            <a class="service__link" href="#">
+                                <span class="service__text">Domestic & International Delivery</span>
+                                <span class="service__icon--wrapper">
+                                    <svg class="service__icon--item icon--earth">
+                                        <use xlink:href="/hw_13/images/sprite.svg#earth"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="service__item">
+                            <a class="service__link" href="#">
+                                <span class="service__text">Well Organized</span>
+                                <span class="service__icon--wrapper">
+                                    <svg class="service__icon--item icon--carrot">
+                                        <use xlink:href="/hw_13/images/sprite.svg#carrot"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-            <div>
-                <img src="images/tomato.png" alt="Our Service">
-                <h2>Our Service</h2>
+                <div class="service__img">
+                    <h2 class="service__title">Our Service</h2>
+                </div>
             </div>
         </section>
     </main>

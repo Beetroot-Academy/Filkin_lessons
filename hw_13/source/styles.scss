@@ -1,15 +1,60 @@
-    
-.wrapper {
-    max-width: 1280px;
-    width: 100%;
-}
-$black: black;
-@mixin title {
+// Variebles
 
+$black: black;
+$white: white;
+$orange: #ff6033;
+
+* {
+    box-sizing: border-box;
+}
+
+@mixin textUppercase {
+    text-transform: uppercase;
+}
+
+@mixin positionWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 img {
     max-width: 100%;
+}
+
+.wrapper {
+    max-width: 1240px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.title {
+    color: $black;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.desc {
+    font-size: 21px;
+    line-height: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid transparent;
+    background-color: $orange;
+    color: $white;
+    transition: color 0.5s ease-in-out;
+    font-size: 21px;
+    &:hover {
+        border: 1px solid $orange;
+        color: $orange;
+        background-color: transparent;
+    }
 }
 
 body {
@@ -18,40 +63,164 @@ body {
 }
 
 .header {
-    padding: 20px 60px 80px 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
-    .logo {
-        width: 150px;
-        height: 80px;
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px 0;
+        position: relative;
     }
-    
-    .nav {
-        &__list {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            &__item {
-                &__link {
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    font-size: 16px;
-                }
-                    }
-               } 
-          }
-        }
 
-.hero {
-    height: 100vh;
-    background-image: url(/hw_13/images/about.png);
-    background-size: cover;
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    &__text {
-
+    &::after {
+        content: "";
+        @include positionWrapper;
+        background-image: url(../images/hero.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
     }
 }
+
+.logo {
+    width: 120px;
+    height: 80px;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.nav {
+	&__list {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+		}
+
+	&__item {
+		}
+
+	&__link {
+        text-decoration: none;
+        @include textUppercase;
+        color: $black;
+        font-weight: 600;
+        padding-top: 5px;
+        &:hover {
+            border-top: 4px solid $orange; 
+        }
+		}
+}
+
+.hero {
+    &__wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+	&__text {
+        margin: 100px auto;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+	
+    &__desc {
+        margin-bottom: 30px;
+        width: 40%;
+    }
+}
+
+.service {
+    height: 100vh;
+    background-color: #70bfff;
+    z-index: 0;
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__icon--wrapper {
+        max-width: 100px;
+        width: 100%;
+    }
+
+    &__icon--item {
+        fill: $black;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        color: $black;
+        font-size: 18px;
+        font-weight: 600;
+        // padding: 40px 10px;
+        background-color: $white;
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        display: flex;
+    }
+
+    &__title {
+        color: $white;
+        font-weight: 600;
+        font-size: 90px;
+        position: relative;
+        height: 50vh;
+        z-index: 2;
+        &::after {
+            content: '';
+            background-image: url(/hw_13/images/tomato.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+    }
+    
+
+.icon--shop {
+    width:  47px;
+    height: 44px;
+  }
+  
+  
+.icon--plant {
+    width:  55px;
+    height: 49px;
+  }
+  
+  
+.icon--eath {
+    width:  54px;
+    height: 54px;
+  }
+  
+  
+.icon--carrot {
+    width:  55px;
+    height: 55px;
+  }
