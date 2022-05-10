@@ -60,6 +60,17 @@ img {
 body {
     font-family: Raleway, sans-serif;
     color: $black;
+    &::after {
+        content: url(/hw_13/images/scroll.svg);
+        z-index: 2;
+        fill: $black;
+        width:  50px;
+        height: 50px;
+        position: fixed;
+        top: 90%;
+        left: 50%;
+        cursor: pointer;
+    }
 }
 
 .header {
@@ -102,6 +113,7 @@ body {
         font-weight: 600;
         padding-top: 5px;
         transition: border 0.1s ease-in-out;
+        cursor: pointer;
         &:hover {
             border-top: 4px solid $orange; 
         }
@@ -157,7 +169,7 @@ body {
             background-repeat: no-repeat;
             @include positionWrapper;
             z-index: 1;
-            right: 50px;
+            right: 80px;
       }
     }
     
@@ -174,7 +186,8 @@ body {
         text-align: center;
         padding: 0 20px;
         width: 100%;
-        min-height: 100px;
+        max-height: 90px;
+        padding: 30px 5px;
         color: $black;
         font-size: 20px;
         font-weight: 700;
@@ -184,7 +197,7 @@ body {
         &:hover {
             color: $white;
         }
-    }
+        }
 
     &__list {
         display: flex;
@@ -195,7 +208,11 @@ body {
     &__item {
         background-color: $white;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        transition: all 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background-color: $orange;
+        }
         }
 
     &__icon {
@@ -216,6 +233,10 @@ body {
     &__subtitle {
         margin: auto 0;
         z-index: 2;
+        transition: all 0.5 ease-in-out;
+        &:hover {
+            transform: rotate(360deg);
+        }
     }
 
     &__item:hover &__text {
