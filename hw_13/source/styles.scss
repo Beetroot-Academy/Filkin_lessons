@@ -67,26 +67,22 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 40px 0;
-        position: relative;
-    }
-
-    &::after {
-        content: "";
-        @include positionWrapper;
-        background-image: url(../images/hero.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: -1;
-    }
+        padding-top: 50px;
+        padding-bottom: 20px;
+        max-height: 10vh;
+            }
 }
 
 .logo {
-    width: 120px;
-    height: 80px;
-    align-items: center;
-    padding-left: 20px;
+    width: 130px;
+    height: 50px;
+}
+
+.subtitle {
+    color: $white;
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 27px;
 }
 
 .nav {
@@ -105,6 +101,7 @@ body {
         color: $black;
         font-weight: 600;
         padding-top: 5px;
+        transition: border 0.1s ease-in-out;
         &:hover {
             border-top: 4px solid $orange; 
         }
@@ -112,14 +109,25 @@ body {
 }
 
 .hero {
+    &::after {
+        content: "";
+        @include positionWrapper;
+        background-image: url(/hw_13/images/hero.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+            }
+
     &__wrapper {
-        height: 100vh;
         display: flex;
         flex-direction: column;
+        height: (100vh-10vh);
+        position: relative;
     }
 
 	&__text {
-        margin: 100px auto;
+        margin-top: 200px;
     }
 
     &__title {
@@ -133,94 +141,88 @@ body {
 }
 
 .service {
-    height: 100vh;
     background-color: #70bfff;
-    z-index: 0;
     &__wrapper {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        margin: auto;
         align-items: center;
+        gap: 220px;
+        height: 100vh;
+        position: relative;
+        &::after {
+            content: '';
+            background-image: url(/hw_13/images/tomato.png);
+            background-position: right center;
+            background-repeat: no-repeat;
+            @include positionWrapper;
+            z-index: 1;
+            right: 50px;
+      }
+    }
+    
+    &__link {
+        display: flex;
+        text-decoration: none;
     }
 
     &__text {
-        width: 50%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        width: 100%;
+        min-height: 100px;
+        color: $black;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 27px;
+        border-right: 3px solid #9d9d9d;
+        transition: color 0.3s ease-in;
+        &:hover {
+            color: $white;
+        }
     }
 
     &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     &__item {
-    }
+        background-color: $white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease-in-out;
+        }
 
-    &__icon--wrapper {
-        max-width: 100px;
+    &__icon {
+        max-width: 80px;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
     }
 
     &__icon--item {
         fill: $black;
-    }
-
-    &__link {
-        display: flex;
-        flex-direction: row;
-        text-decoration: none;
-        color: $black;
-        font-size: 18px;
-        font-weight: 600;
-        // padding: 40px 10px;
-        background-color: $white;
-        margin-bottom: 20px;
-    }
-
-    &__img {
-        display: flex;
-    }
-
-    &__title {
-        color: $white;
-        font-weight: 600;
-        font-size: 90px;
-        position: relative;
-        height: 50vh;
-        z-index: 2;
-        &::after {
-            content: '';
-            background-image: url(/hw_13/images/tomato.png);
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
+        width:  50px;
+        height: 50px;
         }
-    }
-    }
-    
 
-.icon--shop {
-    width:  47px;
-    height: 44px;
+    &__subtitle {
+        margin: auto 0;
+        z-index: 2;
+    }
+
+    &__item:hover &__text {
+    color: $white;
+}
+
+    &__item:hover &__icon--item{
+    fill: $white;
   }
-  
-  
-.icon--plant {
-    width:  55px;
-    height: 49px;
-  }
-  
-  
-.icon--eath {
-    width:  54px;
-    height: 54px;
-  }
-  
-  
-.icon--carrot {
-    width:  55px;
-    height: 55px;
-  }
+}

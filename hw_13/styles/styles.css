@@ -48,28 +48,21 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 40px 0;
-  position: relative;
-}
-.header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url(../images/hero.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  max-height: 10vh;
 }
 
 .logo {
-  width: 120px;
-  height: 80px;
-  align-items: center;
-  padding-left: 20px;
+  width: 130px;
+  height: 50px;
+}
+
+.subtitle {
+  color: white;
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 27px;
 }
 
 .nav__list {
@@ -83,18 +76,33 @@ body {
   color: black;
   font-weight: 600;
   padding-top: 5px;
+  transition: border 0.1s ease-in-out;
 }
 .nav__link:hover {
   border-top: 4px solid #ff6033;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(/hw_13/images/hero.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
 .hero__wrapper {
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 90vh;
+  position: relative;
 }
 .hero__text {
-  margin: 100px auto;
+  margin-top: 200px;
 }
 .hero__title {
   margin-bottom: 30px;
@@ -105,78 +113,84 @@ body {
 }
 
 .service {
-  height: 100vh;
   background-color: #70bfff;
-  z-index: 0;
 }
 .service__wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  margin: auto;
   align-items: center;
-}
-.service__text {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-.service__icon--wrapper {
-  max-width: 100px;
-  width: 100%;
-}
-.service__icon--item {
-  fill: black;
-}
-.service__link {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: white;
-  margin-bottom: 20px;
-}
-.service__img {
-  display: flex;
-}
-.service__title {
-  color: white;
-  font-weight: 600;
-  font-size: 90px;
+  gap: 220px;
+  height: 100vh;
   position: relative;
-  height: 50vh;
-  z-index: 2;
 }
-.service__title::after {
+.service__wrapper::after {
   content: "";
   background-image: url(/hw_13/images/tomato.png);
+  background-position: right center;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   z-index: 1;
+  right: 50px;
 }
-
-.icon--shop {
-  width: 47px;
-  height: 44px;
+.service__link {
+  display: flex;
+  text-decoration: none;
 }
-
-.icon--plant {
-  width: 55px;
-  height: 49px;
+.service__text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  width: 100%;
+  min-height: 100px;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  border-right: 3px solid #9d9d9d;
+  transition: color 0.3s ease-in;
 }
-
-.icon--eath {
-  width: 54px;
-  height: 54px;
+.service__text:hover {
+  color: white;
 }
-
-.icon--carrot {
-  width: 55px;
-  height: 55px;
+.service__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.service__item {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+.service__icon {
+  max-width: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+.service__icon--item {
+  fill: black;
+  width: 50px;
+  height: 50px;
+}
+.service__subtitle {
+  margin: auto 0;
+  z-index: 2;
+}
+.service__item:hover .service__text {
+  color: white;
+}
+.service__item:hover .service__icon--item {
+  fill: white;
 }
 /*# sourceMappingURL=styles.css.map */
