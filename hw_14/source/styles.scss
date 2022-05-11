@@ -246,6 +246,13 @@ img {
         }
     }
 
+    &__icon {
+        color: $blue;
+        &--link {
+            text-decoration: none;
+        }
+    }
+
     &__burger {
             position: relative;
             z-index: 7;
@@ -321,7 +328,7 @@ img {
         z-index: 4;
         top: -75px;
         right: 0px;
-        @media screen and (max-width: $tablet) {
+        @media screen and (max-width: $small-desktop) {
             display: none;
     }
     }
@@ -544,8 +551,3 @@ span.service__icon {
     margin-bottom: 30px;
     font-size: 50px;
 }
-
-.header__nav--item:active {
-    // display: none;
-}
-

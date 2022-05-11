@@ -220,6 +220,12 @@ img {
     padding: 15px;
   }
 }
+.header__icon {
+  color: #56597A;
+}
+.header__icon--link {
+  text-decoration: none;
+}
 .header__burger {
   position: relative;
   z-index: 7;
@@ -282,7 +288,7 @@ img {
   top: -75px;
   right: 0px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .hero::before {
     display: none;
   }
