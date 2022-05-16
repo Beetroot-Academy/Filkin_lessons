@@ -173,10 +173,16 @@ img {
   outline: 0;
   border: 1px solid #FFAE2B;
   padding: 25px 20px;
-  width: 380px;
   background-color: #000;
   margin: 0 auto;
   color: #FFAE2B;
+  width: 420px;
+}
+@media screen and (max-width: 576px) {
+  .input {
+    width: 300px;
+    padding: 15px;
+  }
 }
 .input::-moz-placeholder {
   color: #FFAE2B;
@@ -399,6 +405,10 @@ img {
   display: flex;
   flex-direction: row;
   text-align: center;
+  background-image: url(/hw_16/assets/inst3.png);
+  background-size: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 767px) {
   .gallery__container {
@@ -409,11 +419,6 @@ img {
 .gallery__btn {
   padding: 10px 25px;
 }
-@media screen and (max-width: 767px) {
-  .gallery__btn {
-    display: none;
-  }
-}
 .gallery__title {
   font-weight: 400;
   font-size: 40px;
@@ -421,11 +426,6 @@ img {
   color: #FFAE2B;
   padding-top: 30px;
   margin: 0 40px 60px 40px;
-}
-@media screen and (max-width: 767px) {
-  .gallery__title {
-    display: none;
-  }
 }
 .gallery__item {
   position: relative;
@@ -435,8 +435,18 @@ img {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 1220px) {
+  .gallery__item--wrapper {
+    margin: auto 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gallery__item--wrapper {
+    margin: 30px 0;
+  }
+}
 .gallery__item::before {
-  content: url(/hw_16/assets/inst.svg);
+  content: url(/hw_16/assets/inst2.png);
   position: absolute;
   top: -260px;
   left: 5px;
@@ -445,7 +455,7 @@ img {
   z-index: 2;
   fill: #FFFFFF;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1220px) {
   .gallery__item::before {
     display: none;
   }
@@ -483,13 +493,7 @@ img {
 }
 .footer__desc {
   margin-bottom: 35px;
-  padding: 0 400px;
   text-align: center;
-}
-@media screen and (max-width: 767px) {
-  .footer__desc {
-    padding: 0;
-  }
 }
 .footer__desc--gray {
   font-weight: 400;
@@ -566,7 +570,12 @@ img {
   transition-property: color, background-color, border-color;
   transition-duration: 0.2s;
   transition-timing-function: linear;
-  width: 380px;
+  width: 420px;
+}
+@media screen and (max-width: 576px) {
+  .btn--sub {
+    width: 300px;
+  }
 }
 .btn--sub:hover {
   background-color: transparent;
