@@ -343,7 +343,7 @@ body::after {
 
 .tablet {
   position: relative;
-  margin-bottom: 380px;
+  margin-bottom: 120px;
 }
 .tablet::after {
   content: url(/project_1/assets/tablet.png);

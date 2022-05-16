@@ -379,7 +379,7 @@ body{
 
 .tablet {
     position: relative;
-    margin-bottom: 380px;
+    margin-bottom: 120px;
     &::after {
     content: url(/project_1/assets/tablet.png);
     @include posAbsolute;
