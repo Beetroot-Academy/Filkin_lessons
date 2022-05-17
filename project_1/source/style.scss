@@ -8,6 +8,15 @@ img {
     max-width: 100%;
 }
 
+.container {
+    max-width: 1250px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+// Mixins 
+
 @mixin displayRow {
     display: flex;
     flex-direction: row;
@@ -25,34 +34,35 @@ img {
     left: 0;
     bottom: 0;
 }
-.container {
-    max-width: 1250px;
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
+
+@mixin fontPlayfair {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+}
+
+@mixin fontLato400 {
+    font-family: 'Lato';
+    font-weight: 400;
 }
 
 // Fonts 
 
 .slogan {
-    font-family: 'Playfair Display';
-    font-weight: 400;
+    @include fontPlayfair;
     font-size: 44px;
     line-height: 52px;
     color: $dark;
 }
 
 .title {
-    font-family: 'Playfair Display';
-    font-weight: 400;
+    @include fontPlayfair;
     font-size: 40px;
     line-height: 48px;
     color: $dark;
 }
 
 .subtitle {
-    font-family: 'Playfair Display';
-    font-weight: 400;
+    @include fontPlayfair;
     font-size: 68px;
     line-height: 72px;
     color: $dark;
@@ -70,42 +80,86 @@ img {
     color: $green;
 }
 
-.logo {
-    
-}
+// Elements
 
 .btn {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #F1897B;
     display: block;
     text-decoration: none;
-    position: relative;
+    &__text {
+        color: #F1897B;
+        font-family: 'Lato';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        position: relative;
+        &:after {
+            content: '';
+            width: 95%;
+            height: 13px;
+            background: #F1897B;
+            opacity: 0.3;
+            @include posAbsolute;
+            top: 11px;
+            left: 8px;
+            }
+        }
     &:hover {
         color: $dark;
     }
 }
 
-body{
+.input {
+    border: none;
+    padding: 12px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $border-color;
+    width: 460px;
+    max-width: 100%;
+    &::placeholder {
+        @include fontPlayfair;
+        font-style: italic;
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+        color: $dark;
+        opacity: 0.5;
+    }
+}
+
+.video {
+    margin-top: 30px;
+    margin-right: 40px;
+    width: 780px;
+    height: 480px;
+    border: 1px solid $border-color;
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        border: none;
+     }
+}
+
+// Body 
+
+body {
     background: $white;
     &::after {
         content: "";
         background-image: url(/project_1/assets/hero.png);
         background-repeat: no-repeat;
-        background-size: 100% auto;
+        background-size: 100vw auto;
         @include posAbsolute;
         z-index: -2;
         min-height: 1200px;
         @media screen and (max-width: $tablet) {
-            width: 100vw;
+            min-height: 200px;
         }
     }
 }
+
 // Header
 
 .header {
@@ -120,6 +174,7 @@ body{
     }
 
     &__logo {
+        padding-left: 20px;
     }
 
     &__nav {
@@ -148,8 +203,7 @@ body{
 .nav {
 
     &__link {
-        font-family: 'Lato';
-        font-weight: 400;
+        @include fontLato400;
         font-size: 14px;
         line-height: 24px;
         letter-spacing: 0.08em;
@@ -165,9 +219,6 @@ body{
         @include displayRow;
         gap: 30px;
     }
-
-    &__item {
-    }
 }
 
 // Hero Section
@@ -177,7 +228,7 @@ body{
         margin-bottom: 280px;
         @media screen and (max-width: $tablet) {
             text-align: center;
-            margin-bottom: 100px;
+            margin-bottom: 70px;
         }
     }
 
@@ -199,20 +250,6 @@ body{
     &__text {
         margin-bottom: 50px;
     }
-
-    &__btn {
-        position: relative;
-        &:after {
-            content: '';
-            width: 112px;
-            height: 13px;
-            background: #F1897B;
-            opacity: 0.3;
-            @include posAbsolute;
-            top: 11px;
-            left: 8px;
-            }
-    }
 }
 
 // About Section
@@ -220,18 +257,28 @@ body{
 .about {
     position: relative;
     margin-bottom: 240px;
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 70px;
+    }
     &::before {
         content: url(/project_1/assets/about.png);
         @include posAbsolute;
         top: 0px;
         left: 100px;
         z-index: -1;
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
     }
 
     &__container {
         @include displayRow;
         justify-content: flex-end;
         padding-top: 90px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+            padding-top: 0;
+        }
     }
 
     &__content {
@@ -239,11 +286,18 @@ body{
         width: 70%;
         background: $white;
         opacity: 0.9;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            @include displayColumn;
+        }
     }
 
     &__titles {
         width: 50%;
         text-align: center;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+         }
     }
 
     &__item {
@@ -256,8 +310,12 @@ body{
             width: 82px;
             left: 170px;
             bottom: -40px;
+            @media screen and (max-width: $tablet) {
+                width: 80%;
+                left: 10%;
+                }
             }
-    }
+        }
     }
 
     &__subtitle {
@@ -272,24 +330,19 @@ body{
     &__description {
         width: 50%;
         margin: auto auto;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
     }
 
     &__text--right {
         margin-bottom: 40px;
         padding-right: 75px;
-    }
-
-    &__btn {
-        &:after {
-            content: '';
-            width: 172px;
-            height: 13px;
-            background: #F1897B;
-            opacity: 0.3;
-            @include posAbsolute;
-            top: 11px;
-            left: 8px;
-            }
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+        }
     }
 
     &__item div:last-of-type &__item::after {
@@ -307,6 +360,7 @@ body{
         justify-content: space-between;
         @media screen and (max-width: $tablet) {
            @include displayColumn;
+           text-align: center;
         }
         
     }
@@ -327,6 +381,10 @@ body{
     &__text {
         margin-bottom: 140px;
         padding-right: 55px;
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -340,7 +398,6 @@ body{
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        
         &::after {
             content: url(/project_1/assets/quote-icon.png);
             @include posAbsolute;
@@ -352,26 +409,32 @@ body{
     }
 
     &__text {
-        font-family: 'Lato';
-        font-weight: 400;
+        @include fontLato400;
         font-size: 32px;
         line-height: 46px;
         letter-spacing: 0.04em;
         color: $white;
         padding: 110px 400px 0 130px ;
         margin-bottom: 40px;
+        @media screen and (max-width: $tablet) {
+            padding: 15px 0 0 0;
+            text-align: center;
+        }
     }
 
     &__author {
-        font-family: 'Playfair Display';
+        @include fontPlayfair;
         font-style: italic;
-        font-weight: 400;
         font-size: 20px;
         line-height: 20px;
         letter-spacing: 0.08em;
         color: $white;
         padding-left: 130px;
         padding-bottom: 110px;
+        @media screen and (max-width: $tablet) {
+            padding: 0 0 15px 0;
+            text-align: center;
+        }
     }
 }
 
@@ -380,12 +443,10 @@ body{
 .tablet {
     position: relative;
     margin-bottom: 120px;
-    &::after {
-    content: url(/project_1/assets/tablet.png);
-    @include posAbsolute;
-    left: 300px;
-    z-index: -1;
+    @media screen and (max-width: $tablet) {
+       margin-bottom: 70px;
     }
+    
     &__container {
         text-align: center;
     }
@@ -394,6 +455,14 @@ body{
         margin: 0 auto;
         text-align: center;
         margin-bottom: 80px;
+        &::after {
+            content: url(/project_1/assets/tablet.png);
+            @include posAbsolute;
+            z-index: -2;
+            @media screen and (max-width: $tablet) {
+                display: none;
+            }
+        }
     }
 }
 
@@ -402,12 +471,18 @@ body{
 .trading {
     position: relative;
     margin-bottom: 150px;
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 50px;
+    }
     &::before {
         content: url(/project_1/assets/trading.png);
         @include posAbsolute;
         top: 0px;
         left: 100px;
         z-index: -1;
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
     }
 
     &__container {
@@ -422,20 +497,33 @@ body{
         background: $white;
         opacity: 0.9;
         margin-top: 50px;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            @include displayColumn;
+            text-align: center;
+            margin: 0;
+        }
     }
 
     &__item {
         padding: 45px 0 65px 50px;
         width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            padding: 10px 0 10px 0;
+         }
         &--btn {
             padding-top: 95px ;
             margin-left: 120px;
+            @media screen and (max-width: $tablet) {
+                padding-top: 20px;
+                margin-left: 0;
+            }
         }
     }
 
     &__title {
-        font-family: 'Playfair Display';
-        font-weight: 400;
+        @include fontPlayfair;
         font-size: 24px;
         line-height: 48px;
         color: $dark;
@@ -444,21 +532,16 @@ body{
 
     &__text {
         padding-right: 50px;
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+        }
+        
     }
 
     &__btn {
         border: 1px solid $border-color;
         padding: 35px 95px;
-        &:after {
-            content: '';
-            width: 112px;
-            height: 13px;
-            background: #F1897B;
-            opacity: 0.3;
-            @include posAbsolute;
-            top: 45px;
-            left: 110px;
-            }
+        position: relative;
         &:hover {
             background-color: $coral;
             border: 1px solid $dark;
@@ -471,12 +554,16 @@ body{
 .reviews {
     margin-bottom: 200px;
     text-align: center;
-    &__container {
+    @media screen and (max-width: $tablet) {
+       margin-bottom: 100px;
     }
 
     &__content {
         @include displayRow;
         gap: 20px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+         }
     }
 
     &__slogan {
@@ -492,6 +579,10 @@ body{
         @include displayColumn;
         justify-content: space-between;
         position: relative;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+        
         &--first {
             background-image: url(/project_1/assets/review1.png);
         }
@@ -513,8 +604,7 @@ body{
     }
 
     &__quote {
-        font-family: 'Lato';
-        font-weight: 400;
+        @include fontLato400;
         font-size: 16px;
         line-height: 26px;
         color: $white;
@@ -523,8 +613,7 @@ body{
     }
 
     &__autor {
-        font-family: 'Playfair Display';
-        font-weight: 400;
+        @include fontPlayfair;
         font-style: italic;
         font-size: 16px;
         line-height: 26px;
@@ -537,10 +626,6 @@ body{
 // Footer
 
 .footer {
-
-    &__desc {
-    }
-
     &__container {
         border-top: 1px solid $border-color;
     }
@@ -551,10 +636,20 @@ body{
         justify-content: space-between;
         padding-top: 120px;
         gap: 350px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+            gap: 50px;
+            padding-top: 30px;
+            text-align: center;
+            align-items: center;
+        }
     }
 
     &__left {
         width: 50%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
     }
 
     &__slogan {
@@ -564,25 +659,19 @@ body{
     &__right {
         @include displayColumn;
         width: 50%;
-    }
-
-    &__btn {
-        &:after {
-            content: '';
-            width: 163px;
-            height: 13px;
-            background: #F1897B;
-            opacity: 0.3;
-            @include posAbsolute;
-            top: 11px;
-            left: 11px;
-            }
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
     }
 
     &__bar {
         @include displayRow;
         justify-content: space-between;
         margin-bottom: 25px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+            margin-bottom: 0;
+        }
     }
 
     &__desc {
@@ -593,35 +682,6 @@ body{
         color: $dark;
         opacity: 0.6;
     }
-
-    &__label {
-    }
-}
-
-.input {
-    border: none;
-    padding: 12px 0;
-    margin-bottom: 40px;
-    border-bottom: 1px solid $border-color;
-    width: 460px;
-    &::placeholder {
-        font-family: 'Playfair Display';
-        font-style: italic;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 20px;
-        letter-spacing: 0.08em;
-        color: $dark;
-        opacity: 0.5;
-    }
-}
-
-.video {
-    margin-top: 30px;
-    margin-right: 40px;
-    width: 780px;
-    height: 480px;
-    border: 1px solid $border-color;
 }
 
 
