@@ -63,6 +63,9 @@ img {
   text-transform: uppercase;
   position: relative;
 }
+.btn__text:hover {
+  color: #262A3F;
+}
 .btn__text:after {
   content: "";
   width: 95%;
@@ -77,17 +80,28 @@ img {
   top: 11px;
   left: 8px;
 }
-.btn:hover {
-  color: #262A3F;
+
+.btn--submit {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  display: block;
 }
 
 .input {
   border: none;
-  padding: 12px 0;
+  padding: 12px 0 12px 12px;
   margin-bottom: 40px;
   border-bottom: 1px solid #E4E4E4;
   width: 460px;
   max-width: 100%;
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  color: #262A3F;
 }
 .input::-moz-placeholder {
   font-family: "Playfair Display";
@@ -155,6 +169,7 @@ body::after {
 @media screen and (max-width: 767px) {
   body::after {
     min-height: 200px;
+    background-size: cover;
   }
 }
 
@@ -181,13 +196,33 @@ body::after {
   align-items: center;
 }
 .header__switcher {
+  background-color: rgba(38, 42, 63, 0.3);
+  padding: 7px;
+  display: block;
+}
+.header__switcher--item {
   width: 20px;
   height: 20px;
   fill: #ffffff;
 }
-.header__switcher--background {
-  background-color: rgba(38, 42, 63, 0.3);
-  padding: 7px;
+.header__switcher--link {
+  display: block;
+}
+.header__switcher--link :hover {
+  fill: #262A3F;
+}
+.header__burger {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__burger {
+    display: inline-block;
+  }
+}
+.header__burger--item {
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
 }
 @media screen and (max-width: 767px) {
   .header__nav {
@@ -232,6 +267,7 @@ body::after {
 @media screen and (max-width: 767px) {
   .hero__content {
     width: 100%;
+    padding-top: 100px;
   }
 }
 .hero__slogan {
