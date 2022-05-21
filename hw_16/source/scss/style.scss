@@ -529,7 +529,8 @@ img {
 
     &__subtitle {
         margin-bottom: 20px;
-        padding: 0 300px;
+        max-width: 520px;
+        margin: 0 auto;
         @media screen and (max-width: $tablet) {
             padding: 0;
         }
@@ -576,6 +577,9 @@ img {
         width: 20px;
         height: 20px;
         align-items: center;
+        &:hover {
+            fill: $orange;
+        }
         &--list {
             display: flex;
             flex-direction: row;
@@ -589,7 +593,7 @@ img {
             padding: 13px 15px;
             display: inline-block;
         }
-        }
+    }
 
     &__nav {
         display: flex;

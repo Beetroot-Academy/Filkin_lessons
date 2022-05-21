@@ -469,7 +469,8 @@ img {
 }
 .footer__subtitle {
   margin-bottom: 20px;
-  padding: 0 300px;
+  max-width: 520px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
   .footer__subtitle {
@@ -514,6 +515,9 @@ img {
   width: 20px;
   height: 20px;
   align-items: center;
+}
+.footer__logo:hover {
+  fill: #FFAE2B;
 }
 .footer__logo--list {
   display: flex;
