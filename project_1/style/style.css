@@ -260,9 +260,6 @@ body::after {
   height: 20px;
   fill: #ffffff;
 }
-.header__switcher--link {
-  display: block;
-}
 .header__burger {
   display: none;
   padding: 20px;
@@ -855,6 +852,7 @@ body::after {
   color: #262A3F;
   text-decoration: none;
   display: inline-block;
+  padding: 10px;
 }
 .footer__nav--link:hover {
   color: #F1897B;

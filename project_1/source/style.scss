@@ -259,11 +259,6 @@ body {
             height: 20px;
             fill: $white;
         }
-
-        &--link {
-            display: block;
-        }
-
     }
 
     &__burger {
@@ -831,6 +826,7 @@ body {
         color: $dark;
         text-decoration: none;
         display: inline-block;
+        padding: 10px;
         &:hover {
             color: $coral;
         }
