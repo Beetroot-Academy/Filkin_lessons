@@ -15,8 +15,7 @@ alert (`Perimeter of your square is ${resultPerimetr}!`);
 
 // Radius
 let questRadius = prompt ('Tell me the radius of the circle!');
-const numberPi = 3.14;
-let resultSquare = numberPi * (questRadius ** 2);
+let resultSquare = Math.PI * (questRadius ** 2);
 alert (`Square of your circle is ${resultSquare} centimeters square!`)
 
 // Сurrency Exchange
