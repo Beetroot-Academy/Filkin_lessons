@@ -3,9 +3,9 @@ let ammount1 = 0.1 + +0.2;
 alert (ammount1.toFixed(1));
 
 // 2 exercise
-let num1 = 1;
-n = 2;
-let ammount2 = num1 + 2;
+let num1 = '1';
+let num2 = 2;
+let ammount2 = +num1 + +num2;
 alert (ammount2);
 
 // 3 exercise
