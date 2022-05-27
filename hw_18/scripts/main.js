@@ -20,3 +20,27 @@ let questPrice = prompt ('What is the price of chocolate?');
 let questAmmount = questCash / questPrice;
 let numberChoc =  Math.round(questAmmount);
 alert (`You will get ${questAmmount} chocolates!`);
+
+// 5 exercise 
+let questNum = prompt ('Say a three digit number!');
+function getReversedNum(questNum) {
+    let questResult = 0;
+    while (questNum) {
+      questResult = questResult * 10 + questNum % 10;
+      questNum = Math.floor(questNum / 10);
+    }
+    return questResult;
+  }
+  alert (`Your number - ${getReversedNum(questNum)}!`);
+
+//   6 exercise
+let questMoney = prompt ('Tell me the amount of your contribution!');
+let moneyPrecent = questMoney * 0.05;
+let moneyCash = (+moneyPrecent + +questMoney) * 0.05;
+alert (`You will get ${moneyCash}!`);
+
+// 7 exercise
+let test = 2 && 0 && 3; // 0
+let test1 =  2 || 0 || 3; // 2
+let test2 = 2 && 0 || 3; // 3 
+console.log(test, test1, test2);
