@@ -15,15 +15,15 @@ let flashInteger = Math.round(flashAmmount);
 alert(flashInteger);
 
 // 4 exercise
-let questCash = prompt ('How much money do you have?');
-let questPrice = prompt ('What is the price of chocolate?');
+let questCash = prompt('How much money do you have?');
+let questPrice = prompt('What is the price of chocolate?');
 let questAmmount = questCash / questPrice;
 let numberChoc =  Math.floor(questAmmount);
 let changeChoc = questCash - questPrice * numberChoc;
 alert(`You will get ${numberChoc} chocolates and your change is ${changeChoc} dollars!`);
 
 // 5 exercise 
-let questNum = prompt ('Say a three digit number!');
+let questNum = prompt('Say a three digit number!');
 
 function getReversedNum(questNum) {
     let questResult = 0;
@@ -37,7 +37,7 @@ function getReversedNum(questNum) {
   alert(`Your number - ${getReversedNum(questNum)}!`);
 
 //   6 exercise
-let questMoney = prompt ('Tell me the amount of your contribution!');
+let questMoney = prompt('Tell me the amount of your contribution!');
 let moneyPrecent = questMoney * 0.05;
 let moneyCash = (moneyPrecent + +questMoney) * 0.05;
 alert(`You will get ${moneyCash}!`);
