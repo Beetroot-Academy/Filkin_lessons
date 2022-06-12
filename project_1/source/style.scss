@@ -1,0 +1,840 @@
+@use "variables" as *;
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1250px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+// Mixins 
+
+@mixin displayRow {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin displayColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin fontPlayfair {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+}
+
+@mixin fontLato400 {
+    font-family: 'Lato';
+    font-weight: 400;
+}
+
+// Fonts 
+
+.slogan {
+    @include fontPlayfair;
+    font-size: 44px;
+    line-height: 52px;
+    color: $dark;
+}
+
+.title {
+    @include fontPlayfair;
+    font-size: 40px;
+    line-height: 1.2;
+    color: $dark;
+}
+
+.subtitle {
+    @include fontPlayfair;
+    font-size: 68px;
+    line-height: 1.1;
+    color: $dark;
+}
+
+.text {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.text--selection {
+    font-style: italic;
+    color: $green;
+}
+
+// Elements
+
+.btn {
+    display: block;
+    text-decoration: none;
+    width: max-content;
+    padding: 10px;
+    z-index: -1;
+    @media screen and (max-width: $tablet) {
+        margin: 0 auto;
+    }
+    &:hover .btn__text {
+        color: $dark;
+    }
+
+    &:hover .btn__text::after {
+        background: $dark;
+    }
+
+    &__text {
+        color: #F1897B;
+        font-family: 'Lato';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1x;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        position: relative;
+        &:after {
+            content: '';
+            width: 95%;
+            height: 13px;
+            background: #F1897B;
+            opacity: 0.3;
+            position: absolute;
+            top: 11px;
+            left: 8px;
+        }
+    }
+}
+
+.btn--submit {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    &:hover .btn__text {
+        color: $dark;
+    }
+
+    &:hover .btn__text::after {
+        background: $dark;
+    }
+}
+
+.input {
+    border: none;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $border-color;
+    max-width: 470px;
+    @include fontPlayfair;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+    color: $dark;
+    &:focus {
+        border-bottom: 1px solid $coral;
+    }
+    &::placeholder {
+        @include fontPlayfair;
+        font-style: italic;
+        font-size: 18px;
+        line-height: 1.1;
+        letter-spacing: 0.08em;
+        color: $dark;
+        opacity: 0.5;
+    }
+}
+
+.video {
+    margin-top: 30px;
+    margin-right: 40px;
+    width: 812px;
+    height: 480px;
+    border: 2px solid $border-color;
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+        margin: 0 auto;
+        border: none;
+        margin-bottom: 20px;
+     }
+}
+
+// Body 
+
+body {
+    background: $white;
+    &::after {
+        content: "";
+        background-image: url(/project_1/assets/hero.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: -2;
+        min-height: 1200px;
+        @media screen and (max-width: $tablet) {
+            background-position: top;
+            min-height: 90vh;
+        }
+    }
+}
+
+// Header
+
+.header {
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%), rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(9px);
+    &__container {
+        @include displayRow;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding: 30px 0;
+    }
+
+    &__logo {
+        padding-left: 20px;
+    }
+
+    &__nav {
+        @include displayRow;
+        gap: 40px;
+        align-items: center;
+    }
+
+    &__list {
+        @include displayRow;
+        gap: 30px;
+        @media screen and (max-width: $tablet) {
+            display: none;
+            background-color: rgba($dark, 0.9);
+            gap: 50px;
+            width: 100vw;
+            height: 100vh;
+            z-index: 3;
+        }
+
+        &.active {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            z-index: 4;
+            top: 0;
+            right: 0;
+            }
+    }
+
+    &__switcher {
+        background-color: rgba($dark, 0.3);
+        padding: 10px;
+        margin-right: 20px;
+        @media screen and (max-width: $tablet) {
+            margin-right: 0;
+        }
+        &:hover {
+            background-color: rgba($white, 0.3);
+        }
+
+        &:hover .header__switcher--item {
+            fill: $dark;
+        }
+
+        &--item {
+            width: 20px;
+            height: 20px;
+            fill: $white;
+        }
+    }
+
+    &__burger {
+        display: none;
+        padding: 20px;
+        z-index: 5;
+        @media screen and (max-width: $tablet) {
+            display: inline-block;
+        }
+        &--item {
+            width: 40px;
+            height: 40px;
+            fill: $white;
+        }
+    }
+}
+
+.nav {
+    &__link {
+        @include fontLato400;
+        font-size: 14px;
+        line-height: 1.7;
+        letter-spacing: 0.08em;
+        color: $dark;
+        text-decoration: none;
+        display: inline-block;
+        &:hover {
+            color: $coral;
+        }
+        @media screen and (max-width: $tablet) {
+            font-size: 24px;
+            font-weight: 600;
+            color: $coral;
+            z-index: 4;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+
+// Hero Section
+
+.hero {
+    &__container {
+        margin-bottom: 280px;
+        @media screen and (max-width: $tablet) {
+            text-align: center;
+            margin-bottom: 150px;
+        }
+    }
+
+    &__content {
+        @include displayColumn;
+        width: 50%;
+        padding-top: 220px;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            padding-top: 25px;
+        }
+    }
+
+    &__slogan {
+        margin-bottom: 25px;
+        @media screen and (max-width: $tablet) {
+        }
+    }
+
+    &__text {
+        margin-bottom: 40px;
+    }
+
+}
+
+// About Section
+
+.about {
+    position: relative;
+    margin-bottom: 240px;
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 120px;
+    }
+    &::before {
+        content: url(/project_1/assets/about.png);
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        z-index: -1;
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    &__container {
+        @include displayRow;
+        justify-content: flex-end;
+        padding-top: 90px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+            padding-top: 0;
+        }
+    }
+
+    &__content {
+        @include displayRow;
+        width: 70%;
+        background: $white;
+        opacity: 0.9;
+        padding: 40px 0 40px 0;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            @include displayColumn;
+            z-index: -1;
+        }
+    }
+
+    &__titles {
+        width: 50%;
+        text-align: center;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+
+    &__item {
+        @include displayColumn;
+        position: relative;
+        @media screen and (max-width: $tablet) {
+            padding: 20px 0;
+        }
+        &--border {
+            &::after {
+            content: '';
+            position: absolute;
+            border-bottom: 1px solid $green;
+            width: 82px;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            @media screen and (max-width: $tablet) {
+                width: 80%;
+                left: 50%;
+                padding-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 12px;
+        &--icon {
+            display:inline-block;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 1;
+            color: $border-color;
+        }
+    }
+
+    &__text--left {
+        margin-bottom: 25px;
+    }
+
+    &__description {
+        width: 50%;
+        margin: auto auto;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    &__text--right {
+        padding-right: 60px;
+        margin-bottom: 40px;
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+        }
+    }
+
+    &__item div:last-of-type &__item::after {
+        border-right: none;
+      }
+}
+
+// Benefits Section
+
+.benefits {
+    margin-bottom: 150px;
+    &__container {
+        @include displayRow;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media screen and (max-width: $tablet) {
+           @include displayColumn;
+           text-align: center;
+        }
+        
+    }
+
+    &__item {
+        width: 45%;
+        padding-top: 30px;
+        padding-bottom: 140px;
+        border-top: 1px solid $border-color;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 50px;
+        }
+    }
+
+    &__slogan {
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        padding-right: 55px;
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+        }
+    }
+}
+
+// Quote Section 
+
+.quote {
+    margin-bottom: 150px;
+    &__container {
+        background-image: url(/project_1/assets/quote-background.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        padding: 110px 300px 100px 130px;
+        @media screen and (max-width: $tablet) {
+            padding: 30px;
+            text-align: center;
+        }
+        &::after {
+            content: url(/project_1/assets/quote-icon.png);
+            position: absolute;
+            width: 90px;
+            height: 100px;
+            top: 70px;
+            left: 80px;
+        }
+    }
+
+    &__text {
+        @include fontLato400;
+        font-size: 32px;
+        line-height: 1.45;
+        letter-spacing: 0.04em;
+        color: $white;
+        margin-bottom: 40px;
+        @media screen and (max-width: $tablet) {
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+
+    &__author {
+        @include fontPlayfair;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        color: $white;
+        @media screen and (max-width: $tablet) {
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+}
+
+// Tablet Section
+
+.tablet {
+    position: relative;
+    margin-bottom: 120px;
+    @media screen and (max-width: $tablet) {
+       margin-bottom: 150px;
+    }
+    
+    &__container {
+        text-align: center;
+    }
+
+    &__video {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 80px;
+        @media screen and (max-width: $tablet) {
+            margin-bottom: 20px;
+         }
+        &::after {
+            content: url(/project_1/assets/tablet.png);
+            position: absolute;
+            width: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: -2;
+            @media screen and (max-width: $small-desktop) {
+                display: none;
+            }
+        }
+    }
+}
+
+// Trading Section
+
+.trading {
+    position: relative;
+    margin-bottom: 150px;
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 100px;
+     }
+    &::before {
+        content: url(/project_1/assets/trading.png);
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        z-index: -1;
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    &__container {
+        @include displayRow;
+        justify-content: flex-end;
+    }
+
+    &__content {
+        @include displayRow;
+        width: 70%;
+        flex-wrap: wrap;
+        background: $white;
+        opacity: 0.9;
+        margin-top: 50px;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            @include displayColumn;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    &__item {
+        padding: 45px 0 65px 50px;
+        width: 50%;
+        @include displayColumn;
+        gap: 10px;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            padding: 10px 0 10px 0;
+         }
+        &--btn {
+            padding-top: 80px;
+            margin-left: 50px;
+            @media screen and (max-width: $tablet) {
+                padding-top: 20px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__title {
+        @include fontPlayfair;
+        font-size: 24px;
+        line-height: 2;
+        color: $dark;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        padding-right: 50px;
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+        }
+        
+    }
+
+    &__btn {
+        border: 1px solid $border-color;
+        padding: 35px 90px;
+        position: relative;
+        &:hover {
+            border: 2px solid $dark;
+        }
+    }
+}
+
+// Reviews section
+
+.reviews {
+    margin-bottom: 200px;
+    text-align: center;
+    @media screen and (max-width: $tablet) {
+       margin-bottom: 150px;
+    }
+
+    &__content {
+        @include displayRow;
+        gap: 20px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+         }
+    }
+
+    &__slogan {
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        width: 33.3333%;
+        @include displayColumn;
+        justify-content: space-between;
+        position: relative;
+        padding: 50px;
+        gap: 30px;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+        
+        &--first {
+            background-image: url(/project_1/assets/review1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &--second {
+            background-image: url(/project_1/assets/review2.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &--third {
+            background-image: url(/project_1/assets/review3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &::after {
+            content: '';
+            background: rgba(25, 28, 41, 0.7);
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+
+    &__quote {
+        @include fontLato400;
+        font-size: 16px;
+        line-height: 1.6;
+        color: $white;
+        z-index: 2;
+    }
+
+    &__autor {
+        @include fontPlayfair;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 1;
+        color: $white;
+        z-index: 2;
+    }
+}
+
+// Footer
+
+.footer {
+    &__container {
+        border-top: 1px solid $border-color;
+    }
+
+    &__content {
+        @include displayRow;
+        margin-bottom: 130px;
+        justify-content: space-between;
+        padding-top: 120px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+            padding-top: 30px;
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    &__left {
+        width: 40%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__slogan {
+        margin-bottom: 20px;
+    }
+
+    &__right {
+        @include displayColumn;
+        width: 40%;
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+
+    &__form {
+        @include displayColumn;
+    }
+
+    &__btn {
+        text-align: start;
+        @media screen and (max-width: $tablet) {
+            margin: 0 auto;
+        }
+    }
+
+    &__bar {
+        @include displayRow;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        @media screen and (max-width: $tablet) {
+            @include displayColumn;
+            margin-bottom: 0;
+            padding-bottom: 5px;
+        }
+    }
+
+    &__desc {
+        font-family: 'Lato';
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.85;
+        color: $dark;
+        opacity: 0.6;
+    }
+
+    &__nav--list {
+        @include displayRow;
+        gap: 30px;
+    }
+
+    &__nav--link {
+        @include fontLato400;
+        font-size: 14px;
+        line-height: 1.7;
+        letter-spacing: 0.08em;
+        color: $dark;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px;
+        &:hover {
+            color: $coral;
+        }
+    }
+}
+
+
+
+
+
+
