@@ -64,7 +64,6 @@ let time = {
     seconds: 0,
 }
 
-
 function addZero(value) {
     if(value < 10) {
         return "0" + value;
@@ -77,7 +76,7 @@ function displayTime(time) {
     console.log(`${addZero(time.hours)}:${addZero(time.minutes)}:${addZero(time.seconds)}.`)
 }
 
-displayTime(time);
+// displayTime(time);
 
 function addSeconds(time, seconds) {
     result = time.seconds + seconds

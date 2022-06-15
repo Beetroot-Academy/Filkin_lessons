@@ -1,0 +1,252 @@
+// Variebles
+
+$black: black;
+$white: white;
+$orange: #ff6033;
+
+* {
+    box-sizing: border-box;
+}
+
+@mixin textUppercase {
+    text-transform: uppercase;
+}
+
+@mixin positionWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    max-width: 1240px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.title {
+    color: $black;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.desc {
+    font-size: 21px;
+    line-height: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid transparent;
+    background-color: $orange;
+    color: $white;
+    transition: color 0.5s ease-in-out;
+    font-size: 21px;
+    &:hover {
+        border: 1px solid $orange;
+        color: $orange;
+        background-color: transparent;
+    }
+}
+
+body {
+    font-family: Raleway, sans-serif;
+    color: $black;
+    &::after {
+        content: url(/hw_13/images/scroll.svg);
+        z-index: 2;
+        fill: $black;
+        width:  50px;
+        height: 50px;
+        position: fixed;
+        top: 90%;
+        left: 50%;
+        cursor: pointer;
+    }
+}
+
+.header {
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        max-height: 10vh;
+            }
+}
+
+.logo {
+    width: 130px;
+    height: 50px;
+}
+
+.subtitle {
+    color: $white;
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+.nav {
+	&__list {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+		}
+
+	&__item {
+		}
+
+	&__link {
+        text-decoration: none;
+        @include textUppercase;
+        color: $black;
+        font-weight: 600;
+        padding-top: 5px;
+        transition: border 0.1s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            border-top: 4px solid $orange; 
+        }
+		}
+}
+
+.hero {
+    &::after {
+        content: "";
+        @include positionWrapper;
+        background-image: url(/hw_13/images/hero.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+            }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        height: (100vh-10vh);
+        position: relative;
+    }
+
+	&__text {
+        margin-top: 200px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+	
+    &__desc {
+        margin-bottom: 30px;
+        width: 40%;
+    }
+}
+
+.service {
+    background-color: #70bfff;
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        align-items: center;
+        gap: 220px;
+        height: 100vh;
+        position: relative;
+        &::after {
+            content: '';
+            background-image: url(/hw_13/images/tomato.png);
+            background-position: right center;
+            background-repeat: no-repeat;
+            @include positionWrapper;
+            z-index: 1;
+            right: 80px;
+      }
+    }
+    
+    &__link {
+        display: flex;
+        text-decoration: none;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        width: 100%;
+        max-height: 90px;
+        padding: 30px 5px;
+        color: $black;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 27px;
+        border-right: 3px solid #9d9d9d;
+        transition: color 0.3s ease-in;
+        &:hover {
+            color: $white;
+        }
+        }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__item {
+        background-color: $white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+        z-index: 3;
+        &:hover {
+            background-color: $orange;
+        }
+        }
+
+    &__icon {
+        max-width: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    &__icon--item {
+        fill: $black;
+        width:  50px;
+        height: 50px;
+        }
+
+    &__subtitle {
+        margin: auto 0;
+        z-index: 2;
+        transition: all 0.5 ease-in-out;
+        &:hover {
+            animation: roll 5s infinite;
+            transform: rotateZ(360deg);
+            transition: all 0.6s ease-in-out;
+        }
+    }
+
+    &__item:hover &__text {
+    color: $white;
+}
+
+    &__item:hover &__icon--item{
+    fill: $white;
+  }
+}

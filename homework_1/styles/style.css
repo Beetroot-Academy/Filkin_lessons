@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(207, 255, 242);
+  font-family: "Montserrat", sans-serif;
+}
+
+.my-name {
+  margin-bottom: 20px;
+  size: 25px;
+}
+
+.my-job {
+  margin-top: 20px;
+}
+
