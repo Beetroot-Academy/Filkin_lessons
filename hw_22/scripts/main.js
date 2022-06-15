@@ -1,56 +1,56 @@
 // Minimal
 
-// let ford = {
-//     manufacturer: 'Ford',
-//     model: 'Mustang',
-//     year: 1969,
-//     averageSpeed: 100,
-//     fuelVolume: 50,
-//     fuelConsume: 15,
-//     driver: 'Ihor',
-//     fuelNow: 0,
-// };
+let ford = {
+    manufacturer: 'Ford',
+    model: 'Mustang',
+    year: 1969,
+    averageSpeed: 100,
+    fuelVolume: 50,
+    fuelConsume: 15,
+    driver: 'Ihor',
+    fuelNow: 0,
+};
 
-// function showInfo(car) {
-//     console.log(`
-//     Manufacturer: ${car.manufacturer},
-//     Model: ${car.model},
-//     Year of manufacture: ${car.year},
-//     Average speed: ${car.averageSpeed} km/h,
-//     Fuel tank capacity: ${car.fuelVolume} l,
-//     Average fuel consumption: ${car.fuelConsume}l,
-//     Fuel balance: ${car.fuelNow} l,
-//     Driver: ${car.driver}.`)
-// }
+function showInfo(car) {
+    console.log(`
+    Manufacturer: ${car.manufacturer},
+    Model: ${car.model},
+    Year of manufacture: ${car.year},
+    Average speed: ${car.averageSpeed} km/h,
+    Fuel tank capacity: ${car.fuelVolume} l,
+    Average fuel consumption: ${car.fuelConsume}l,
+    Fuel balance: ${car.fuelNow} l,
+    Driver: ${car.driver}.`)
+}
 
-// function addDriver(car, driver) {
-// 	return car.driver = driver;
-// }
+function addDriver(car, driver) {
+	return car.driver = driver;
+}
 
-// // addDriver(ford, 'Johnny');
-// // showInfo(ford);
+// addDriver(ford, 'Johnny');
+// showInfo(ford);
 
-// function addFuel(car, fuelAdding) {
-//     car.fuelNow = car.fuelNow + fuelAdding;
-//     if (car.fuelNow > car.fuelVolume) {
-//         console.log(`Your fuel tank is already full!`);
-//         car.fuelNow = car.fuelVolume
-//     }
-// }
+function addFuel(car, fuelAdding) {
+    car.fuelNow = car.fuelNow + fuelAdding;
+    if (car.fuelNow > car.fuelVolume) {
+        console.log(`Your fuel tank is already full!`);
+        car.fuelNow = car.fuelVolume
+    }
+}
  
-// function getDistanceTime(car, distance, driver) {
-//     if (car.driver != driver) {
-//         console.log(`You are not authorized to drive this vehicle!`)
-//     }
-//     let roadTime = distance / +car.averageSpeed;
-//     let chillTime = roadTime / 4;
-//     let fullTime = (roadTime + chillTime).toFixed(1);
-//     console.log(`You need ${fullTime} hours to get there.`);
-//     let needFuel = distance / car.fuelConsume;
-//     if (needFuel > car.fuelNow) {
-//         console.log(`You need to refuel!`)
-//     }
-// }
+function getDistanceTime(car, distance, driver) {
+    if (car.driver != driver) {
+        console.log(`You are not authorized to drive this vehicle!`)
+    }
+    let roadTime = distance / +car.averageSpeed;
+    let chillTime = roadTime / 4;
+    let fullTime = (roadTime + chillTime).toFixed(1);
+    console.log(`You need ${fullTime} hours to get there.`);
+    let needFuel = distance / car.fuelConsume;
+    if (needFuel > car.fuelNow) {
+        console.log(`You need to refuel!`)
+    }
+}
 
 // getDistanceTime(ford, 200, 'Anton');
 // addFuel(ford, 80);
