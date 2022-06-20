@@ -35,16 +35,12 @@ let playList= [
     }];
 
 let player = document.querySelector('.first-task');
-let songList = document.createElement("ul");
+let songList = document.createElement("ol");
 player.append(songList);
 
 for (let i in playList) {
     const songListBlock = document.createElement("li");
-    const songListItem = document.createElement("p");
-    songListItem.append(playList[i].author);
-    songListItem.append(" : ");
-    songListItem.append(playList[i].song);
-    songListBlock.append(songListItem);
+    songListBlock.innerHTML = `${playList[i].author} - ${playList[i].song}`;
     songList.append(songListBlock);
   }
 
@@ -67,16 +63,16 @@ closeButton.addEventListener('click', function() {
 let trafficLight = document.querySelector('.trafficlight');
 
 let redlight = document.getElementById("red");
-let yellowlight = document.getElementById("orange");
+let orangelight = document.getElementById("orange");
 let greenlight = document.getElementById("green");
 let trafficLightButton = document.getElementById('traffic__btn');
 
 trafficLightButton.addEventListener("click", function() {
     if (redlight.classList.contains("trafficlight--red")) {
         redlight.classList.remove("trafficlight--red");
-        yellowlight.classList.add("trafficlight--orange");
-      } else if (yellowlight.classList.contains("trafficlight--orange")) {
-        yellowlight.classList.remove("trafficlight--orange");
+        orangelight.classList.add("trafficlight--orange");
+      } else if (orangelight.classList.contains("trafficlight--orange")) {
+        orangelight.classList.remove("trafficlight--orange");
         greenlight.classList.add("trafficlight--green");
       } else if (greenlight.classList.contains("trafficlight--green")) {
         greenlight.classList.remove("trafficlight--green");
