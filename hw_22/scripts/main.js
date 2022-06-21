@@ -114,5 +114,5 @@ function addHours(time, hours) {
 }
 
 // addHours(time, 13)
-// displayTime(time)
+displayTime(time)
 
