@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnWay</title>
+    <link rel="icon" type="Image/x-icon" href="./images/favicon.ico">
+    <link	rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css,npm/@splidejs/splide@4.0.7/dist/css/splide-core.min.css"/>
+    <link rel="stylesheet" href="./styles/reset.css"/>
+    <link rel="stylesheet" href="./styles/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+    <script src="./scripts/script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <div class="logo">
+          <a href="#" class="logo__link">
+            <svg class="logo__icon">
+              <use xlink:href="./images/sprite.svg#logo"></use>
+            </svg>
+          </a>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav__list">
+
+            <li class="nav__item">
+              <a class="nav__link" href="#">Home</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="#">Catalog</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="#">News</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="#">Contacts</a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <nav class="panel">
+          <ul class="panel__list">
+            <li class="panel__item">
+              <a href="#" class="panel__link">
+                <svg class="panel__icon">
+                  <use xlink:href="./images/sprite.svg#search"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="panel__item">
+              <a href="#" class="panel__link">
+                <svg class="panel__icon">
+                  <use xlink:href="./images/sprite.svg#profile"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="hero">
+        <div class="hero__splide splide" role="group" id="#hero-splide">
+          <div class="splide__track hero__splide--track">
+            <ul class="splide__list hero__splide--list">
+              <li class="splide__slide hero__splide--slide">
+                <div class="hero__container">
+                  <h1 class="hero__title title">Discover new options</h1>
+                  <a href="#" class="hero__btn btn--white">
+                    <span class="btn__text--white">View more</span>
+                  </a>
+                </div>
+                <img class="hero__splide--img" src="./images/banner1.png" alt="Guitars"/>
+              </li>
+
+              <li class="splide__slide hero__splide--slide">
+                <div class="hero__container">
+                  <h1 class="hero__title title">Expand your horizons</h1>
+                    <a href="#" class="hero__btn btn--white">
+                      <span class="btn__text--white">View more</span>
+                  </a>
+                </div>
+                <img class="hero__splide--img"src="./images/banner2.png" alt="Guitars"/>
+              </li>
+
+              <li class="splide__slide hero__splide--slide">
+                <div class="hero__container">
+                  <h1 class="hero__title title">Find your own style</h1>
+                  <a href="#" class="hero__btn btn--white">
+                    <span class="btn__text--white">View more</span>
+                  </a>
+                </div>
+                <img class="hero__splide--img" src="./images/banner3.png" alt="Guitars"/>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="arivals">
+        <div class="arivals__container container">
+          <h2 class="arivals__heading heading">New Arrivals</h2>
+          <div class="splide arivals__splide" role="group" aria-label="Splide Basic HTML Example">
+
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--custom splide__arrow--prev"></button>
+              <button class="splide__arrow splide__arrow--custom splide__arrow--next"></button>
+            </div>
+
+            <div class="splide__track">
+              <ul class="splide__list arivals__splide--list">
+                <li class="splide__slide arivals__splide--slide">
+                  <img src="./images/guitar1.png" alt="Hagstrom Alvar Limited Edition" class="arivals__splide--img"/>
+                  <h3 class="description"> Hagstrom Alvar Limited Edition </h3>
+                  <p class="price__text">€2.990,00</p>
+                </li>
+
+                <li class="splide__slide arivals__splide--slide">
+                  <img src="./images/guitar2.png" alt="Hagstrom Tremar Viking Deluxe Cloudy Seas" class="arivals__splide--img"/>
+                  <h3 class="description"> Hagstrom Tremar Viking Deluxe Cloudy Seas </h3>
+                  <p class="price__text">€1.300,00</p>
+                </li>
+
+                <li class="splide__slide arivals__splide--slide">
+                  <img src="./images/guitar3.png"alt="Gibson Les Paul Standard 60s"class="arivals__splide--img"/>
+                  <h3 class="description">Gibson Les Paul Standard 60s </h3>
+                  <p class="price__text">€3.749,00</p>
+                </li>
+
+                <li class="splide__slide arivals__splide--slide">
+                  <img src="./images/guitar4.png" alt="Suhr Standard Plus Trans Blue Denim" class="arivals__splide--img"/>
+                  <h3 class="description">Suhr Standard Plus Trans Blue Denim</h3>
+                  <p class="price__text">€3.449,00</p>
+                </li>
+
+                <li class="splide__slide arivals__splide--slide">
+                  <img src="./images/guitar5.png" alt="Fender Telecaster Black Paisley Limited Edition" class="arivals__splide--img"/>
+                  <h3 class="description"> Fender Telecaster Black Paisley Limited Edition </h3>
+                  <p class="price__text">€1.499,00</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#" class="arivals__btn btn">
+            <span class="btn__text">View more</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="partners">
+        <div class="partners__container container">
+          <h2 class="partners__heading heading">Our Partners</h2>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"></footer>
+    
+  </body>
+</html>

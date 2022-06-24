@@ -1,0 +1,287 @@
+@use "variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Montserrat";
+  font-style: normal;
+}
+
+.container {
+  width: 100%;
+  max-width: 1370px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.logo {
+  margin: auto 0;
+  &__link {
+    padding: 15px;
+  }
+
+  &__icon {
+    fill: $tomato;
+    width: 180px;
+    height: 35px;
+  }
+}
+
+// Fonts
+
+.title {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 61px;
+  text-transform: uppercase;
+  color: $brown-ligth;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: $black;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $black;
+  margin-bottom: 10px;
+}
+
+.price__text {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: $black;
+}
+
+.btn__text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: $black;
+}
+
+.btn {
+  border: 1px solid $black;
+  padding: 15px 60px;
+  text-decoration: none;
+  &:hover {
+    background-color: $tomato-light;
+    border: none;
+  }
+
+  &:hover > .btn__text {
+    color: $brown-ligth;
+  }
+}
+
+.btn__text--white {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.btn--white {
+  border: 1px solid $white;
+  padding: 15px 60px;
+  text-decoration: none;
+  &:hover {
+    background-color: $tomato-light;
+    border: none;
+  }
+
+  &:hover > .btn__text--white {
+    color: $brown-ligth;
+  }
+}
+
+// Header
+
+.header {
+  background-color: $brown-ligth;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    padding: 30px 5px;
+    color: $black;
+    min-width: 120px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: $tomato-light;
+    }
+
+    &:hover > .nav__link {
+      color: $brown-ligth;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    color: $black;
+    padding: 10px;
+  }
+}
+
+.panel {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__item {
+    &:hover {
+      fill: $tomato-light;
+    }
+  }
+
+  &__icon {
+    fill: black;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__link {
+    padding: 5px;
+    &:hover > .panel__icon {
+      fill: $tomato-light;
+    }
+  }
+}
+
+// Main
+
+// Hero
+
+.hero {
+  margin-bottom: 70px;
+  &__container {
+    
+  }
+
+  &__splide {
+  }
+
+  &__splide--track {
+      height: 100vh;
+  }
+
+  &__splide--list {
+  }
+
+  &__splide--slide {
+    width: 100vw;
+    height: 100vh - 10vh;
+  }
+
+  &__splide--img {
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__title {
+  }
+
+  &__splide--slide {
+  }
+
+  &__btn {
+  }
+}
+
+// New Arivals
+
+.arivals {
+  background-color: $white;
+  margin-bottom: 80px;
+  &__container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__heading {
+    margin-bottom: 70px;
+  }
+
+  &__splide {
+    margin-bottom: 80px;
+  }
+
+  &__splide--track {
+  }
+
+  &__splide--list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__splide--slide {
+    min-width: 20%;
+    min-height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 2px solid $brown-ligth;
+    padding: 20px 5px;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      border: 2px solid $tomato-light;
+    }
+  }
+
+  &__splide--img {
+    margin-bottom: 20px;
+  }
+}
+
+// Out Partners
+
+.partners {
+  background-color: $brown-ligth;
+  &__container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__heading {
+    color: $black;
+    margin-bottom: 60px;
+  }
+
+}
