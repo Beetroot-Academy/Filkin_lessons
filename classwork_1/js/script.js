@@ -44,4 +44,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
         textarea.value = localStorage.getItem('text');
     }
 
-})
+});
+
+let switcher = document.querySelector('#switch');
+let body = document.querySelector('body')
+switcher.addEventListener('click', () => {
+body.classList.toggle('dark')
+
+if(body.classList.contains('dark')) {
+localStorage.setItem('dark', true);
+}else{
+	localStorage.setItem('dark', false);
+}})
