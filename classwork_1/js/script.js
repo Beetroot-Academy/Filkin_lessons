@@ -38,3 +38,10 @@ let textarea = document.querySelector('#textarea');
 textarea.addEventListener('change', (e) => {
 	localStorage.setItem('text', textarea.value);
 });
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    if (localStorage.getItem('text')) {
+        textarea.value = localStorage.getItem('text');
+    }
+
+})
