@@ -1,4 +1,9 @@
 @use "variables" as *;
+@use "header";
+@use "hero";
+@use "arivals";
+@use "partners";
+@use "footer";
 
 * {
   box-sizing: border-box;
@@ -13,6 +18,10 @@ body {
   font-style: normal;
 }
 
+a {
+  display: block;
+}
+
 .container {
   width: 100%;
   max-width: 1370px;
@@ -22,14 +31,27 @@ body {
 
 .logo {
   margin: auto 0;
-  &__link {
-    padding: 15px;
-  }
 
   &__icon {
     fill: $tomato;
+    width: 150px;
+    height: 30px;
+  }
+
+  &__icon--white {
+    fill: $white;
     width: 180px;
     height: 35px;
+  }
+
+  &__link {
+    padding: 10px;
+  }
+}
+
+.logo__icon--white {
+  &:hover {
+    fill: $tomato-light;
   }
 }
 
@@ -40,9 +62,15 @@ body {
   font-size: 50px;
   line-height: 61px;
   text-transform: uppercase;
-  color: $brown-ligth;
+  color: $brown-light;
   margin-bottom: 60px;
   max-width: 400px;
+  text-align: center;
+  @media screen and (max-width: $tablet) {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 210px;
+  }
 }
 
 .heading {
@@ -51,6 +79,10 @@ body {
   line-height: 39px;
   text-transform: uppercase;
   color: $black;
+  @media screen and (max-width: $tablet) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 .description {
@@ -75,266 +107,96 @@ body {
   line-height: 22px;
   text-transform: uppercase;
   color: $black;
-}
-
-.btn {
-  border: 1px solid $black;
-  padding: 15px 60px;
-  text-decoration: none;
-  transition: all 0.3s;
-  &:hover {
-    background-color: $tomato-light;
-    border: 1px solid transparent;
-  }
-
-  &:hover > .btn__text {
-    color: $brown-ligth;
+  @media screen and (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
 .btn__text--white {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  text-transform: uppercase;
   color: $white;
 }
 
-.btn--white {
-  border: 1px solid $white;
-  padding: 15px 60px;
+// Buttons
+
+.btn {
+  border: 2px solid $black;
+  padding: 15px 50px;
   text-decoration: none;
   transition: all 0.3s;
+  max-width: 230px;
+  text-align: center;
   &:hover {
     background-color: $tomato-light;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
+  }
+
+  &:hover > .btn__text {
+    color: $brown-light;
+  }
+}
+
+.btn--white {
+  border: 2px solid $white;
+  padding: 15px 40px;
+  text-decoration: none;
+  transition: all 0.3s;
+  max-width: 230px;
+  text-align: center;
+  &:hover {
+    background-color: $tomato-light;
+    border: 2px solid transparent;
   }
 
   &:hover > .btn__text--white {
-    color: $brown-ligth;
+    color: $brown-light;
   }
 }
 
-// Header
-
-.header {
-  background-color: $brown-ligth;
-  &__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-  }
-
-  &__logo {
-  }
-}
-
-.nav {
-  &__list {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &__item {
-    padding: 30px 5px;
-    color: $black;
-    min-width: 120px;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      background-color: $tomato-light;
-    }
-
-    &:hover > .nav__link {
-      color: $brown-ligth;
-    }
-  }
-
-  &__link {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    text-decoration: none;
-    color: $black;
-    padding: 10px;
-  }
-}
-
-.panel {
-  &__list {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-  }
-
-  &__item {
-    &:hover {
-      fill: $tomato-light;
-    }
-  }
-
-  &__icon {
-    fill: black;
-    width: 36px;
-    height: 36px;
-  }
-
-  &__link {
-    padding: 5px;
-    &:hover > .panel__icon {
-      fill: $tomato-light;
-    }
-  }
-}
-
-// Main
-
-// Hero
-
-.hero {
-  margin-bottom: 70px;
-  &__container {
-    float: right;
-    text-align: center;
-    padding: 120px 100px 0 0;
-    margin: 0 auto;
-    max-width: 33%;
-  }
-
-  &__splide--slide {
-    height: 100vh - 10vh;
-    }
-
-  &__splide--img {
-    box-shadow: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%);
-    width: 100%;
-  }
-}
-
-.splide__pagination {
-  gap: 30px;
-  bottom: 20px;
-}
-
-.splide__pagination__page.is-active {
-	background: $tomato-light;
-	transform: none;
-}
-
-.splide__pagination__page {
-	width: 20px;
-	height: 20px;
-	background: $dot-inactive;
-}
-
-
-// New Arivals
-
-.arivals {
-  margin-bottom: 80px;
-  &__container {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  &__heading {
-    margin-bottom: 70px;
-  }
-
-  &__splide {
-    max-width: 85%;
-    margin: 0 auto;
-  }
-
-  &__splide--list {
-    display: flex;
-    flex-direction: row;
-  }
-
-  // &__splide--track {
-  //   margin-bottom: 80px;
-  // }
-
-  &__splide--slide {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    border: 2px solid $brown-ligth;
-    padding: 20px 5px;
-    transition: all 0.5s ease-in-out;
-    &:hover {
-      border: 2px solid $tomato-light;
-    }
-  }
-}
+// Arrows
 
 .splide__arrow--prev svg {
-	transform: none;
+  transform: none;
 }
 
 .splide__arrow {
-	background: transparent;
-	width: auto;
-	height: auto;
-	opacity: 1;
+  background: transparent;
+  width: auto;
+  height: auto;
+  opacity: 1;
 
-	&:hover svg {
-		fill: $tomato-light;
-		opacity: 1;
-		transition: fill 0.3s;
-	}
+  &:hover svg {
+    fill: $tomato-light;
+    opacity: 1;
+    transition: fill 0.3s;
+  }
 
-	svg {
-		fill: $arrow-inactive;
-		width: 16px;
-		height: 30px;
-	}
+  svg {
+    fill: $arrow-inactive;
+    width: 16px;
+    height: 30px;
+  }
 }
 
 .splide__arrow--prev {
-	left: -25px;
+  left: -25px;
 }
 .splide__arrow--next {
-	right: -25px;
+  right: -25px;
 }
 
-// Out Partners
-
-.partners {
-  background-color: $brown-ligth;
-  &__container {
-    margin: 0 auto;
-    text-align: center;
+@media screen and (min-width: $desktop) {
+  .splide__arrow {
+    svg {
+      width: 40px;
+      height: 74px;
+    }
   }
 
-  &__heading {
-    color: $black;
-    margin-bottom: 60px;
-    padding-top: 70px;
+  .splide__arrow--prev {
+    left: -55px;
   }
-
-  &__splide--track {
-    margin-bottom: 100px;
-  }
-
-  &__splide--list {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &__splide--slide {
-    width: 114px;
-    height: 65px;
-    text-align: center;
-  }
-
-  &__splide--img {
+  .splide__arrow--next {
+    right: -55px;
   }
 }
-
-
-
-

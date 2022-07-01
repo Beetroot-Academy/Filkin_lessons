@@ -1,0 +1,139 @@
+@use "variables" as *;
+
+.header {
+  background-color: $brown-light;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    @media screen and (max-width: $tablet) {
+      height: 60px;
+    }
+  }
+}
+
+.header-nav {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__item {
+    padding: 30px 5px;
+    color: $black;
+    min-width: 120px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    @media screen and (max-width: $tablet) {
+      min-width: 10px;
+      padding: 0;
+    }
+    &:hover {
+      background-color: $tomato-light;
+    }
+
+    &:hover > .header-nav__link {
+      color: $brown-light;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-decoration: none;
+    color: $black;
+    padding: 10px;
+    @media screen and (max-width: $tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  @media screen and (max-width: $tablet) {
+    gap: 20px;
+  }
+  @media screen and (max-width: $mobile) {
+    gap: 0;
+  }
+
+  &__menu {
+    margin-left: 35px;
+    margin-right: 5px;
+  }
+
+  &__link {
+    padding: 5px;
+    &:hover > .icons__item {
+      fill: $tomato-light;
+    }
+  }
+
+  &__item {
+    fill: $black;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.menu {
+  position: relative;
+  width: 22px;
+  height: 20px;
+  cursor: pointer;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+
+  &:hover &__stripe {
+    background: $tomato-light;
+  }
+
+  &__stripe {
+    display: block;
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: $black;
+    transition: all 0.2s;
+
+    &--top {
+      top: 0;
+    }
+
+    &--middle {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--bottom {
+      bottom: 0;
+    }
+  }
+
+  &--active {
+    .menu__stripe--top {
+      top: 47%;
+      transform: rotate(45deg);
+    }
+    .menu__stripe--middle {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .menu__stripe--bottom {
+      top: 47%;
+      transform: rotate(-45deg);
+    }
+  }
+}
