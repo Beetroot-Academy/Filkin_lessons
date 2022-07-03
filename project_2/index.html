@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link type="Image/x-icon" href="./images/favicon.ico" rel="icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital@0;1&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/combine/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css,npm/@splidejs/splide@4.0.7/dist/css/splide-core.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+    <script defer src="./js/script.js"></script>
+    <title>Monticello</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__logo logo">
+          <a class="logo__link" href="#">
+            <img src="./images/logo.svg" alt="Monticello" />
+          </a>
+        </div>
+
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#">About Us</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Projects</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">News</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg class="social__icon">
+                  <use xlink:href="./images/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg class="social__icon">
+                  <use xlink:href="./images/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <svg class="social__icon">
+                  <use xlink:href="./images/sprite.svg#inst"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__splide splide" role="group" id="hero-splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="hero__content">
+                    <h1 class="hero__slogan slogan">Simple & Modern</h1>
+                    <h2 class="hero__subslogan subslogan">
+                      We make the world beautiful everyday
+                    </h2>
+                  </div>
+                  <img src="./images/1.jpg" alt="Background" />
+                </li>
+                <li class="splide__slide">
+                  <div class="hero__content">
+                    <h1 class="hero__slogan slogan">Simple & Modern</h1>
+                    <h2 class="hero__subslogan subslogan">
+                      We make the world beautiful everyday
+                    </h2>
+                  </div>
+                  <img src="./images/2.jpg" alt="Background" />
+                </li>
+                <li class="splide__slide">
+                  <div class="hero__content">
+                    <h1 class="hero__slogan slogan">Simple & Modern</h1>
+                    <h2 class="hero__subslogan subslogan">
+                      We make the world beautiful everyday
+                    </h2>
+                  </div>
+                  <img src="./images/3.jpg" alt="Background" />
+                </li>
+                <li class="splide__slide">
+                  <div class="hero__content">
+                    <h1 class="hero__slogan slogan">Simple & Modern</h1>
+                    <h2 class="hero__subslogan subslogan">
+                      We make the world beautiful everyday
+                    </h2>
+                  </div>
+                  <img src="./images/4.jpg" alt="Background" />
+                </li>
+                <li class="splide__slide">
+                  <div class="hero__content">
+                    <h1 class="hero__slogan slogan">Simple & Modern</h1>
+                    <h2 class="hero__subslogan subslogan">
+                      We make the world beautiful everyday
+                    </h2>
+                  </div>
+                  <img src="./images/5.jpg" alt="Background" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="about__container container">
+          <h3 class="about__title title">What we do</h3>
+          <div class="about__content">
+            <div class="about__img">
+              <img src="./images/what-we-do1.png" alt="Trade Center" />
+            </div>
+            <div class="about__text">
+              <span class="about__subtitle subtitle">One World</span>
+              <h4 class="about__section-title section-title">Trade Center</h4>
+              <p class="about__desc desc">
+                Increasing prosperity in our lives can be accomplished by having
+                the right frame of mind. The truth is, our thoughts are very
+                powerful.
+              </p>
+              <a class="about__btn btn" href="#"
+                ><span class="btn-text">More Details</span></a
+              >
+              <span class="about__location location"
+                ><span class="about__material-icons material-icons">
+                  location_on </span
+                >New York City, United States - 1776 feet</span
+              >
+            </div>
+          </div>
+
+          <div class="about__content about__content--reverse">
+            <div class="about__img">
+              <img src="./images/what-we-do2.png" alt="Commerce Center" />
+            </div>
+            <div class="about__text">
+              <span class="about__subtitle subtitle">International</span>
+              <h4 class="about__section-title section-title">
+                Commerce Center
+              </h4>
+              <p class="about__desc desc">
+                Successful businesses have many things in common, today we'll
+                look at the big 'R' of recognition and how a digital advertising
+                network may help.
+              </p>
+              <a class="about__btn btn" href="#"
+                ><span class="btn-text">More Details</span></a
+              >
+              <span class="about__location location"
+                ><span class="about__material-icons material-icons">
+                  location_on </span
+                >Hong Kong -1588 feet</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="news">
+        <div class="news__container container">
+          <h3 class="news__title title title--white">Latest News</h3>
+
+          <div
+            class="splide news-splide"
+            role="group"
+            id="news-splide"
+            aria-label="Splide Basic HTML Example"
+          >
+            <div class="splide__track news-splide__track">
+              <ul class="splide__list news-splide__list">
+                <li class="splide__slide news-splide__slide">
+                  <img src="/project_2/images/news1.png" alt="News" />
+                  <div class="news__content">
+                    <h5 class="headline news__headline">
+                      See the unmatched beauty of the great.
+                    </h5>
+                    <q class="desc"
+                      >Free directories: directories are perfect for customers
+                      that are searching for...</q
+                    >
+                    <div class="news__author">
+                      <img
+                        src="/project_2/images/author1.png"
+                        alt="Author"
+                        class="news__author--img"
+                      />
+                      <div class="news__author--text">
+                        <span class="author-text">Alja Brun</span>
+                        <span class="date-text">20 Jan 2020</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide news-splide__slide">
+                  <img src="/project_2/images/news2.png" alt="News" />
+                  <div class="news__content">
+                    <h5 class="headline news__headline">
+                      Effective Advertising Pointers.
+                    </h5>
+                    <q class="desc"
+                      >Having a home based business is a wonderful asset to your
+                      life...</q
+                    >
+                    <div class="news__author">
+                      <img
+                        src="/project_2/images/author2.png"
+                        alt="Author"
+                        class="news__author--img"
+                      />
+                      <div class="news__author--text">
+                        <span class="author-text">Dominic Freeman</span>
+                        <span class="date-text">13 Dec 2019</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide news-splide__slide">
+                  <img src="/project_2/images/news3.png" alt="News" />
+                  <div class="news__content">
+                    <h5 class="headline news__headline">
+                      Hypnotize yourself into the ghost.
+                    </h5>
+                    <q class="desc"
+                      >There are many things that are important to catalog
+                      design...</q
+                    >
+                    <div class="news__author">
+                      <img
+                        src="/project_2/images/author3.png"
+                        alt="Author"
+                        class="news__author--img"
+                      />
+                      <div class="news__author--text">
+                        <span class="author-text">Alice Ward</span>
+                        <span class="date-text">30 Nov 2019</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide news-splide__slide">
+                  <img src="/project_2/images/news1.png" alt="News" />
+                  <div class="news__content">
+                    <h5 class="headline news__headline">
+                      See the unmatched beauty of the great.
+                    </h5>
+                    <q class="desc"
+                      >Free directories: directories are perfect for customers
+                      that are searching for...</q
+                    >
+                    <div class="news__author">
+                      <img
+                        src="/project_2/images/author1.png"
+                        alt="Author"
+                        class="news__author--img"
+                      />
+                      <div class="news__author--text">
+                        <span class="author-text">Alja Brun</span>
+                        <span class="date-text">20 Jan 2020</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="gallery__container container">
+          <h3 class="about__title title">Gallery</h3>
+          <div class="gallery__list">
+            <div class="gallery__item">
+              <div class="gallery__img">
+                <img
+                  src="/project_2/images/gallery1.png"
+                  alt="House"
+                  class="gallery__img--full"
+                />
+              </div>
+            </div>
+            <div class="gallery__item--half">
+              <div class="gallery__img">
+                <img
+                  src="/project_2/images/gallery2.png"
+                  alt="House"
+                  class="gallery__img--half"
+                />
+              </div>
+              <div class="gallery__img">
+                <img
+                  src="/project_2/images/gallery3.png"
+                  alt="House"
+                  class="gallery__img--half"
+                />
+              </div>
+              <div class="gallery__img">
+                <img
+                  src="/project_2/images/gallery4.png"
+                  alt="House"
+                  class="gallery__img--half"
+                />
+              </div>
+              <div class="gallery__img">
+                <img
+                  src="/project_2/images/gallery5.png"
+                  alt="House"
+                  class="gallery__img--half"
+                />
+              </div>
+            </div>
+          </div>
+          <a class="gallery__btn btn" href="#"
+            ><span class="btn-text">See More</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container container"></div>
+    </footer>
+  </body>
+</html>

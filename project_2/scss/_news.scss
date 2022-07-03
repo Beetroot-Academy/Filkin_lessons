@@ -1,0 +1,67 @@
+@use "variebles" as *;
+
+.news {
+  margin-bottom: 120px;
+  padding-bottom: 120px;
+  padding-top: 120px;
+  background-image: url(../images/news.png);
+  &__container {
+    text-align: center;
+    // padding-top: 150px;
+  }
+
+  &__content {
+    padding: 30px 20px;
+    text-align: start;
+  }
+
+  &__headline {
+    margin-bottom: 15px;
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+  }
+
+  &__author--img {
+    border: 1px solid transparent;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  &__author--text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+  }
+
+  &__title {
+    margin-bottom: 90px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.news-splide {
+  display: flex;
+  justify-content: center;
+  &__track {
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    max-width: 370px;
+  }
+}

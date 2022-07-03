@@ -1,0 +1,53 @@
+@use "variebles" as *;
+
+.about {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 90px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    margin-bottom: 200px;
+  }
+
+  &__content--reverse {
+    flex-direction: row-reverse;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 50%;
+    height: auto;
+  }
+
+  &__section-title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 5px;
+  }
+
+  &__desc {
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    margin-bottom: 80px;
+  }
+
+  &__material-icons {
+    color: $dark-blue;
+  }
+}
