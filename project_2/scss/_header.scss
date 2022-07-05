@@ -51,6 +51,8 @@
       border: 1px solid $white;
       left: -15px;
       top: 8px;
+      transition: all 0.3 ease-in-out;
+      transition-duration: 1s;
     }
 
     &:hover {
@@ -58,27 +60,5 @@
         background-color: $white;
       }
     }
-  }
-}
-
-.social {
-  &__list {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  &__item {
-  }
-
-  &__link {
-    padding: 5px;
-  }
-
-  &__icon {
-    fill: $white;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
   }
 }
