@@ -19,7 +19,7 @@ body {
 }
 
 a {
-  display: block;
+  display: inline-block;
 }
 
 .container {
@@ -70,6 +70,7 @@ a {
     font-size: 26px;
     line-height: 32px;
     max-width: 210px;
+    margin-bottom: 20px;
   }
 }
 

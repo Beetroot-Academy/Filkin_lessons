@@ -28,6 +28,7 @@
   &__splide--slide {
     height: calc(100vh - 80px);
     @media screen and (max-width: $tablet) {
+      padding-top: 60px;
       height: calc(100vh - 60px);
     }
   }
@@ -36,6 +37,7 @@
 .splide__pagination {
   gap: 30px;
   bottom: 20px;
+  z-index: 1 !important;
   @media screen and (min-width: $desktop) {
     gap: 50px;
     bottom: 50px;

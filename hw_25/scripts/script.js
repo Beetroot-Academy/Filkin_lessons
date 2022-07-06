@@ -66,9 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let burger = document.querySelector(".menu");
-let nav = document.querySelector(".header-nav");
+let navList = document.querySelector(".header-nav__list");
 
-burger.addEventListener("click", function showMenu() {
-  burger.classList.toggle("menu--active");
-  nav.classList.toggle("nav--active");
-});
+function openNav() {
+  burger.classList.toggle("active");
+  navList.classList.toggle("active");
+}
+
+burger.addEventListener("click", openNav);
