@@ -13,17 +13,17 @@
     </nav>
     <ul class="social__list">
       <li class="social__item">
-        <a href="#" class="social__link" target="_blank">
+        <a href="#" class="social__link">
           <font-awesome-icon icon="fa-brands fa-instagram social__icon"
         /></a>
       </li>
       <li class="social__item">
-        <a href="#" class="social__link" target="_blank">
+        <a href="#" class="social__link">
           <font-awesome-icon icon="fa-brands fa-facebook social__icon"
         /></a>
       </li>
       <li class="social__item">
-        <a href="#" class="social__link" target="_blank">
+        <a href="#" class="social__link">
           <font-awesome-icon icon="fa-brands fa-twitter social__icon"
         /></a>
       </li>
@@ -51,6 +51,7 @@ export default {
   display: flex;
   flex-direction: row;
   gap: 80px;
+  align-items: center;
 }
 
 .nav__link {

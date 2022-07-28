@@ -20,6 +20,7 @@ export default {
   padding: 10px 20px;
   margin-bottom: 100px;
   transition: all 0.6s ease;
+  color: white;
 }
 
 .btn::after,
