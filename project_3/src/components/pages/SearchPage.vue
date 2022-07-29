@@ -2,10 +2,34 @@
   <section class="movies container">
     <div class="search">
       <h2 class="search__title">Search</h2>
+      <form class="search__type">
+        <input
+          @change="onChangeType"
+          type="radio"
+          id="movies"
+          value="movie"
+          v-model="searchType"
+          name="type"
+          class="type__radio"
+          checked
+        />
+        <label for="movies" class="type__label">Movies</label>
+
+        <input
+          @change="onChangeType"
+          type="radio"
+          id="tvseries"
+          value="tvseries"
+          v-model="searchType"
+          name="type"
+          class="type__radio"
+        />
+        <label for="tvseries" class="type__label">TV Series</label>
+      </form>
       <form
         class="search__form"
-        @submit.prevent="SearchMovies"
-        @keyup.enter="SearchMovies"
+        @submit.prevent="searchMovies"
+        @keyup.enter="searchMovies"
       >
         <input
           type="text"
@@ -51,7 +75,7 @@ export default {
   setup() {
     const search = ref("");
     const movies = ref([]);
-    const SearchMovies = () => {
+    const searchMovies = () => {
       if (search.value != "") {
         fetch(
           `https://api.themoviedb.org/3/search/movie?api_key=${env.apikey}&query=${search.value}`
@@ -64,15 +88,20 @@ export default {
           });
       }
     };
+
+    // const onChangeType = (event) => {
+    //   if
+    // }
+
     return {
       search,
       movies,
-      SearchMovies,
+      searchMovies,
     };
   },
   filters: {
     TransformDate(string) {
-      if (string == undefined) {
+      if (!string) {
         return "Date not found";
       } else {
         let options = { year: "numeric", month: "long", day: "numeric" };
@@ -135,8 +164,7 @@ export default {
   border-radius: 5px;
   &:hover {
     font-family: "Londrina Solid";
-    background-color: #fff;
-    color: #000;
+    color: #fff;
   }
 }
 
@@ -190,5 +218,40 @@ export default {
     font-size: 18px;
     color: #fff;
   }
+}
+
+.search__type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 70px;
+  gap: 20px;
+}
+
+.type__label {
+  font-family: "Londrina Outline", cursive;
+  font-size: 30px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  min-width: 135px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    font-family: "Londrina Solid", cursive;
+  }
+}
+
+.type__radio {
+  visibility: hidden;
+}
+
+.type__radio:checked + .type__label {
+  font-family: "Londrina Solid", cursive;
+  font-size: 30px;
+  color: #000;
+  background-color: #fff;
 }
 </style>
