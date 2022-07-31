@@ -5,10 +5,20 @@
     </a>
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Search</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Favorites</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+        <li class="nav__item">
+          <router-link :to="'/'" class="nav__link">Home</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link :to="'/search'" class="nav__link">Search</router-link>
+        </li>
+        <li class="nav__item">
+          <router-link :to="'/discover'" class="nav__link"
+            >Discover</router-link
+          >
+        </li>
+        <li class="nav__item">
+          <router-link :to="'/'" class="nav__link">Favorites</router-link>
+        </li>
       </ul>
     </nav>
     <ul class="social__list">

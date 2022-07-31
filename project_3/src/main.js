@@ -13,7 +13,8 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-library.add(faInstagram, faFacebook, faTwitter, faHeart);
+library.add(faInstagram, faFacebook, faTwitter);
+library.add(faHeart);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 // TypingText
@@ -24,6 +25,11 @@ Vue.use(VueTypedJs);
 import VueRouter from "vue-router";
 import routes from "./router/routes";
 Vue.use(VueRouter);
+
+// Axios
+Vue.use(VueAxios, axios);
+import axios from "axios";
+import VueAxios from "vue-axios";
 
 new Vue({
   vuetify,

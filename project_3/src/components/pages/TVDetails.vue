@@ -1,18 +1,18 @@
 <template>
   <section class="movie-details container">
+    <h2 class="movie-details__title">{{ tvInfo.name }}</h2>
     <button @click="$router.go(-1)" class="movie-details__btn">Back</button>
-    <h2 class="movie-details__title">{{ movieInfo.title }}</h2>
     <div class="movie-details__content">
       <div class="movie-details__img">
          <img
-          v-if="!movieInfo.poster_path"
+          v-if="!tvInfo.poster_path"
           src="@/assets/404.jpg"
-          :alt="movieInfo.name"
+          :alt="tvInfo.name"
           class="movie-details__img"/>
         <img
           v-else
-          :src="'https://image.tmdb.org/t/p/w300' + movieInfo.poster_path"
-          :alt="movieInfo.name"
+          :src="'https://image.tmdb.org/t/p/w300' + tvInfo.poster_path"
+          :alt="tvInfo.name"
           class="movie-details__img"/>
       </div>
       <div class="movie-details__description">
@@ -20,42 +20,68 @@
           <span class="movie-details__headers">
             Genre:
           </span>
-          <ul class="movie-details__genre__list">
+          <ul class="movie-details__list">
             <li
-              class="movie-details__genre__item"
-              v-for="genre in movieInfo.genres"
+              class="movie-details__item"
+              v-for="genre in tvInfo.genres"
               :key="genre.id">
                 {{ genre.name }}
             </li>
           </ul>
         </p>
-        <p class="movie-details__text">
+         <p class="movie-details__text">
           <span class="movie-details__headers">
-            Release Date:
+            Created by:
           </span>
-            {{
-              movieInfo.release_date | TransformDate
-            }}
+           <ul class="movie-details__list">
+            <li
+              class="movie-details__item"
+              v-for="name in tvInfo.created_by"
+              :key="name.id">
+                {{ name.name }}
+            </li>
+          </ul>
+        </p>
+         <p class="movie-details__text">
+          <span class="movie-details__headers">
+            Country:
+          </span>
+           <ul class="movie-details__list">
+            <li
+              class="movie-details__item"
+              v-for="country in tvInfo.production_countries"
+              :key="country.id">
+                {{ country.name }}
+            </li>
+          </ul>
         </p>
         <p class="movie-details__text">
           <span class="movie-details__headers">
             Vote Avarage:
           </span>
             {{
-              movieInfo.vote_average
+              tvInfo.vote_average
             }}
         </p>
         <p class="movie-details__text">
           <span class="movie-details__headers">
-            Runtime:
+            Seasons:
           </span>
-            {{ movieInfo.runtime }} min
+            {{ tvInfo.number_of_seasons }}
+        </p>
+        <p class="movie-details__text">
+          <span class="movie-details__headers">
+            Series:
+          </span>
+            {{
+               tvInfo.number_of_episodes
+            }}
         </p>
         <p class="movie-details__text">
           <span class="movie-details__headers">
             Overview:
           </span>
-            {{ movieInfo.overview }}
+            {{ tvInfo.overview }}
         </p>
         <p class="movie-details__text">
           <span class="movie-details__headers">
@@ -64,14 +90,14 @@
           <ul class="movie-details__links__list">
             <li class="movie-details__links__item">
               <a
-              :href="movieInfo.homepage"
+              :href="tvInfo.homepage"
               class="movie-details__link"
               target="_blank">
               Official Website</a>
             </li> |
             <li class="movie-details__links__item">
           <a
-            :href="'https://www.imdb.com/title/' + movieInfo.imdb_id"
+            :href="'https://www.imdb.com/title/' + tvInfo.imdb_id"
             class="movie-details__link"
             target="_blank">
             IMDb</a>
@@ -84,44 +110,32 @@
 </template>
 
 <script>
+
 export default {
-  name: "MovieDetails",
+  name: "TVDetails",
+
   data() {
     return {
-      show: "movie/",
+      show: "tv/",
       apikey: "4608236be3c999836b08e6b342e284d8",
       id: this.$route.params.id,
-      movieInfo: {},
+      tvInfo: {},
     };
   },
   methods: {
-    getMovieDetails() {
+    getTVDetails() {
       this.axios
         .get(
           `https://api.themoviedb.org/3/${this.show}${this.id}?api_key=${this.apikey}`
         )
         .then((response) => {
-          this.movieInfo = response.data;
-          console.log(this.movieInfo);
+          this.tvInfo = response.data;
+          console.log(this.tvInfo);
         });
     },
   },
-   filters: {
-    TransformDate(string) {
-      if (string == undefined) {
-        return "Date not found";
-      } else {
-        let options = { year: "numeric", month: "long", day: "numeric" };
-        const [year, month, day] = string.split("-");
-        return new Date(year, month - 1, day).toLocaleDateString(
-          "en-US",
-          options
-        );
-      }
-    }
-  },
   created() {
-    this.getMovieDetails();
+    this.getTVDetails();
   },
 };
 </script>
@@ -140,7 +154,7 @@ export default {
     padding-top: 20px;
   }
 
-  &__btn {
+&__btn {
     text-transform: uppercase;
     background-color: transparent;
     border: 1px solid #fff;
@@ -157,7 +171,6 @@ export default {
         color: #fff;
   }
 }
-
   &__content {
     display: flex;
     flex-direction: row;
@@ -165,7 +178,7 @@ export default {
   }
 
   &__img {
-     width: 350px;
+    width: 350px;
     height: 500px;
   }
 
@@ -174,10 +187,15 @@ export default {
     flex-direction: column;
   }
 
-  &__genre__list {
+  &__list {
     display: flex;
     flex-direction: row;
     padding-left: 0 !important;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
   }
 
   &__headers {
@@ -203,11 +221,12 @@ export default {
     padding-left: 0 !important;
   }
 
-  &__genre__item:after {
-    content: ","
+  &__item:after {
+    content: ",";
+    margin-right: 10px;
   }
 
-  &__genre__item:last-child:after {
+  &__item:last-child:after {
     content: ""
   }
 }
