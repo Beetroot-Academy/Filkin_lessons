@@ -3,6 +3,7 @@ import SearchPage from "@/components/pages/SearchPage";
 import MovieDetails from "@/components/pages/MovieDetails";
 import TVDetails from "@/components/pages/TVDetails";
 import DiscoverPage from "@/components/pages/DiscoverPage";
+import FavouritesPage from "@/components/pages/FavouritesPage";
 
 export default {
   mode: "history",
@@ -14,7 +15,7 @@ export default {
       component: HomePage,
     },
     {
-      path: "/search",
+      path: "/search/:searchPhrase?",
       name: "SearchPage",
       component: SearchPage,
     },
@@ -32,6 +33,11 @@ export default {
       path: "/discover",
       name: "DiscoverPage",
       component: DiscoverPage,
+    },
+    {
+      path: "/favourites",
+      name: "FavouritesPage",
+      component: FavouritesPage,
     },
   ],
 };

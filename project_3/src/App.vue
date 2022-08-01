@@ -1,16 +1,14 @@
 <template>
-  <v-app>
-    <div id="app">
-      <header>
-        <router-link to="/">
-          <HeaderSection />
-        </router-link>
-      </header>
-      <main>
-        <router-view />
-      </main>
-    </div>
-  </v-app>
+  <div id="app">
+    <header>
+      <router-link to="/">
+        <HeaderSection />
+      </router-link>
+    </header>
+    <main>
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <script>

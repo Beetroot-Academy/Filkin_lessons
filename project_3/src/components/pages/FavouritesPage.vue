@@ -1,45 +1,28 @@
 <template>
   <v-app>
-    <section class="movies container">
-      <div class="search">
-        <h2 class="search__title">Search</h2>
-        <form class="type">
-          <input
-            type="radio"
-            id="movies"
-            value="movie"
-            v-model="selectedValue"
-            name="type"
-            class="type__radio"
-          />
-          <label for="movies" class="type__label">Movies</label>
+    <div class="favourites container">
+      <h2 class="favourites__title">Favourites</h2>
+      <form class="type">
+        <input
+          type="radio"
+          id="movies"
+          value="movie"
+          v-model="selectedValue"
+          name="type"
+          class="type__radio"
+        />
+        <label for="movies" class="type__label">Movies</label>
 
-          <input
-            type="radio"
-            id="tvseries"
-            value="tv"
-            v-model="selectedValue"
-            name="type"
-            class="type__radio"
-          />
-          <label for="tvseries" class="type__label">TV Series</label>
-        </form>
-        <form
-          class="search__form"
-          @submit.prevent="getContent"
-          @keyup.enter="getContent"
-        >
-          <input
-            type="text"
-            id="input__search"
-            placeholder="Enter the title.."
-            v-model="query"
-            required
-          />
-
-          <input type="submit" value="Search" id="input__submit" />
-        </form>
-      </div>
+        <input
+          type="radio"
+          id="tvseries"
+          value="tv"
+          v-model="selectedValue"
+          name="type"
+          class="type__radio"
+        />
+        <label for="tvseries" class="type__label">TV Series</label>
+      </form>
       <div class="movies-list container" :pages="pages">
         <div
           class="movie"
@@ -47,7 +30,7 @@
           :key="movie.id"
           v-show="selectedValue === 'movie'"
         >
-          <button class="like">
+          <button class="like" @click="toggleMovies()">
             <span class="like__text">&#10084;</span>
           </button>
           <router-link :to="'/movie/' + movie.id">
@@ -114,31 +97,36 @@
         @click.native="$scrollToTop"
         class="pagination"
       ></v-pagination>
-    </section>
+    </div>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: "SearchPage",
-
+  name: "FavouritesPage",
   data() {
     return {
+      favShowIds: [],
+      favShowInfo: {},
+      favShowsData: [],
+      favMovieIds: [],
+      favMovieInfo: {},
+      favMoviesData: [],
+      favouritemovies: [],
+      favouriteshows: [],
       apikey: "4608236be3c999836b08e6b342e284d8",
-      query: "",
       movies: [],
       tvseries: [],
       selectedValue: "movie",
       pagenum: 1,
       pages: 0,
+      pagination: false,
+      noshows: true,
+      nomovies: true,
     };
   },
   methods: {
     getContent() {
-      const path = `/search/${this.query}`;
-      if (this.$route.path !== path) {
-        this.$router.push({ params: { searchPhrase: this.query } });
-      }
       if (this.selectedValue === "movie") {
         this.getMovies();
       } else {
@@ -146,26 +134,42 @@ export default {
       }
     },
     getMovies() {
-      this.axios
-        .get(
-          `https://api.themoviedb.org/3/search/${this.selectedValue}?api_key=${this.apikey}&page=${this.pagenum}&language=en-US&include_adult=false&include_valueo&query=${this.query}`
-        )
-        .then((response) => {
-          this.movies = response.data.results;
-          this.pages = response.data.total_pages;
-        })
-        .catch((err) => console.error(err));
+      for (let i = 0; i < this.favmoviesdds.length; i++) {
+        this.axios
+          .get(
+            `https://api.themoviedb.org/3/${this.selectedValue}/${this.favShowId[i]}?api_key=${this.apikey}&page=${this.pagenum}&language=en-US`
+          )
+          .then((response) => {
+            this.favmovieinfo = response.data;
+            this.favmoviesdata.push(this.favmovieinfo);
+            this.pages = response.data.total_pages;
+            if (this.movies.length > 0) {
+              this.pagination = true;
+            }
+            console.log(this.movies);
+            console.log(this.movies.value);
+          })
+          .catch((err) => console.error(err));
+      }
     },
     getTV() {
-      this.axios
-        .get(
-          `https://api.themoviedb.org/3/search/${this.selectedValue}?api_key=${this.apikey}&page=${this.pagenum}&language=en-US&include_adult=false&include_valueo&query=${this.query}`
-        )
-        .then((response) => {
-          this.tvseries = response.data.results;
-          this.pages = response.data.total_pages;
-        })
-        .catch((err) => console.error(err));
+      for (let i = 0; i < this.favshowids.length; i++) {
+        this.axios
+          .get(
+            `https://api.themoviedb.org/3/search/${this.selectedValue}?api_key=${this.apikey}&page=${this.pagenum}&language=en-US&include_adult=false&include_valueo&query=${this.query}`
+          )
+          .then((response) => {
+            this.favshowinfo = response.data;
+            this.favshowsdata.push(this.favshowinfo);
+            this.pages = response.data.total_pages;
+            if (this.movies.length > 0) {
+              this.pagination = true;
+            }
+            console.log(this.tvseries);
+            console.log(this.tvseries.value);
+          })
+          .catch((err) => console.error(err));
+      }
     },
     nextPage: function () {
       this.pagenum += 1;
@@ -173,21 +177,29 @@ export default {
     lastPage: function () {
       this.pagenum -= 1;
     },
-  },
-  computed: {
-    pagination() {
-      return !!this.movies?.length || !!this.tv?.length;
+    checkStorage() {
+      if (localStorage.getItem("favouriteshows")) {
+        try {
+          this.favshowids = JSON.parse(localStorage.getItem("favouriteshows"));
+        } catch (e) {
+          localStorage.removeItem("favouriteshows");
+        }
+      }
+
+      if (localStorage.getItem("favouritemovies")) {
+        try {
+          this.favmovieids = JSON.parse(
+            localStorage.getItem("favouritemovies")
+          );
+        } catch (e) {
+          localStorage.removeItem("favouritemovies");
+        }
+      }
     },
   },
   watch: {
     pagenum: function () {
       this.getContent();
-    },
-    selectedValue: function () {
-      this.movies = [];
-      this.tvseries = [];
-      this.pagenum = 1;
-      this.pages = 0;
     },
   },
   filters: {
@@ -205,64 +217,24 @@ export default {
     },
   },
   created() {
-    if (this.$route.params.searchPhrase) {
-      this.query = this.$route.params.searchPhrase;
-      this.getContent();
-    }
+    this.getContent();
+    this.checkStorage();
   },
 };
 </script>
 
 <style lang="scss">
-.movies {
+.favourites {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-
-.search {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 100px;
-
   &__title {
     margin: 50px 0;
     font-family: "Londrina Outline", cursive;
     font-size: 60px;
     text-align: center;
   }
-
-  &__form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-  }
 }
-
-#input__search {
-  min-width: 350px;
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-family: "Londrina Solid";
-}
-
-#input__submit {
-  text-transform: uppercase;
-  background-color: transparent;
-  border: 1px solid #fff;
-  font-family: "Londrina Outline";
-  padding: 5px 10px;
-  transition: all 0.5s ease-in-out;
-  border-radius: 5px;
-  &:hover {
-    font-family: "Londrina Solid";
-    color: #fff;
-  }
-}
-
 .movies-list {
   margin-bottom: 70px;
   display: flex;
@@ -315,42 +287,5 @@ export default {
     font-size: 18px;
     color: #fff;
   }
-}
-
-.type {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 70px;
-  gap: 20px;
-  &__label {
-    font-family: "Londrina Outline", cursive;
-    font-size: 30px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    min-width: 135px;
-    padding: 10px 0;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-  }
-  &:hover {
-    font-family: "Londrina Solid", cursive;
-  }
-  &__radio {
-    visibility: hidden;
-  }
-  &__radio:checked + .type__label {
-    font-family: "Londrina Solid", cursive;
-    font-size: 30px;
-    color: #000;
-    background-color: #fff;
-  }
-}
-
-.pagination {
-  font-family: "Londrina Solid", cursive;
-  margin-bottom: 40px;
 }
 </style>

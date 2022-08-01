@@ -17,7 +17,9 @@
           >
         </li>
         <li class="nav__item">
-          <router-link :to="'/'" class="nav__link">Favorites</router-link>
+          <router-link :to="'/favourites'" class="nav__link"
+            >Favorites</router-link
+          >
         </li>
       </ul>
     </nav>
