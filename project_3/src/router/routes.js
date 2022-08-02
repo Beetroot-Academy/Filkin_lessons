@@ -7,6 +7,7 @@ import FavouritesPage from "@/components/pages/FavouritesPage";
 
 export default {
   mode: "history",
+  base: "/Filkin_lessons/",
 
   routes: [
     {
