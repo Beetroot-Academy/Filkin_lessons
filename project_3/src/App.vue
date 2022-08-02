@@ -55,4 +55,16 @@ a {
 .active {
   display: flex;
 }
+
+@media (max-width: 1007px) {
+  .container {
+    max-width: 1007px;
+  }
+}
+
+@media (max-width: 641px) {
+  .container {
+    max-width: 641px;
+  }
+}
 </style>

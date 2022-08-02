@@ -32,10 +32,15 @@ export default {
   background-image: url(@/assets/hero.gif);
   background-size: cover;
   background-repeat: no-repeat;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.hero__content {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 1007px) {
+  .hero {
+    height: 93vh;
+  }
 }
 </style>

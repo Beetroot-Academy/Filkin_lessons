@@ -33,4 +33,16 @@ export default {
   font-size: 90px;
   margin-bottom: 60px;
 }
+
+@media (max-width: 1007px) {
+  .typing {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 641px) {
+  .typing {
+    font-size: 40px;
+  }
+}
 </style>

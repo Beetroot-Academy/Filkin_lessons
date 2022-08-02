@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <section class="discover">
+    <section class="discover container">
       <h2 class="discover__title">Discover Movies</h2>
       <div class="discover__sort">
         <form class="discover__form">
@@ -107,7 +107,6 @@ export default {
   },
   methods: {
     getContent() {
-      console.log(this.selectedValue);
       this.axios
         .get(
           `https://api.themoviedb.org/3/movie/${this.selectedValue}?api_key=${this.apikey}&page=${this.pagenum}`
@@ -229,5 +228,62 @@ export default {
 
 .movie:hover > .like {
   visibility: visible;
+}
+
+@media (max-width: 1007px) {
+  .discover {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &__title {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    &__form {
+      margin-bottom: 60px;
+      gap: 5px;
+    }
+
+    &__label {
+      font-size: 20px;
+      &:hover {
+        font-size: 20px;
+      }
+    }
+
+    &__radio:checked + .discover__label {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 641px) {
+  .discover {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__form {
+      margin-bottom: 60px;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    &__label {
+      font-size: 18px;
+      &:hover {
+        font-size: 18px;
+      }
+    }
+
+    &__radio:checked + .discover__label {
+      font-size: 18px;
+    }
+  }
 }
 </style>

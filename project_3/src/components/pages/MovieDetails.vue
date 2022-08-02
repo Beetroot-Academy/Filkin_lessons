@@ -172,6 +172,7 @@ export default {
   &__description {
     display: flex;
     flex-direction: column;
+    gap: 20px;
   }
 
   &__genre__list {
@@ -211,4 +212,82 @@ export default {
     content: ""
   }
 }
+
+  @media (max-width: 1007px) {
+  .movie-details {
+    height: 93vh !important;
+  &__title {
+    text-align: center !important;
+    font-size: 30px !important;
+  }
+
+  &__btn {
+    display: none;
+} 
+
+  &__content {
+    display: flex;
+    gap: 80px;
+  }
+
+  &__img {
+     width: 250px !important;
+    height: 350px !important;
+  }
+
+  &__description {
+    gap: 15px;
+  }
+
+  &__headers {
+    min-width: 120px !important;
+  }
+
+  &__text {
+    font-size: 18px;
+    text-align: start;
+  }
+  }
+}
+
+@media (max-width: 641px) {
+   .movie-details {
+    height: auto !important;
+  &__title {
+    text-align: center !important;
+    font-size: 30px !important;
+    margin-bottom: 20px !important;
+  }
+
+  &__btn {
+    display: none;
+  } 
+
+  &__content {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important; 
+  }
+
+  &__img {
+     width: 250px !important;
+    height: 350px !important;
+  }
+
+  &__description {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__headers {
+    min-width: 120px !important;
+  }
+
+  &__text {
+    font-size: 18px;
+    text-align: start;
+  }
+  }
+}
+
 </style>

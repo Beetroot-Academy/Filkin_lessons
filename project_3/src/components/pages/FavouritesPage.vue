@@ -249,7 +249,6 @@ export default {
   max-height: 580px;
   display: flex;
   flex-direction: column;
-  z-index: 5;
   border: 1px solid #fff;
   overflow: hidden;
   position: relative;
@@ -266,7 +265,6 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    z-index: 8;
   }
 
   &__title {
