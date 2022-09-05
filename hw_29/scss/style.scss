@@ -1,0 +1,93 @@
+// General
+
+.main {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  width: 200px;
+  position: relative;
+}
+
+.front {
+  position: absolute;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 0.6s linear;
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  visibility: hidden;
+  border: 1px solid black;
+  border-radius: 12px;
+  background-color: white;
+  transition: all 0.6s linear;
+  transform: perspective(600px) rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+// Back
+
+.top {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+}
+
+.bot {
+  display: flex;
+  flex-direction: column;
+  transform: rotate(180deg);
+}
+
+.mid {
+  text-align: center;
+}
+
+.name {
+  font-weight: 900;
+  font-size: 32px;
+  padding: 10px 0 0 10px;
+  margin-bottom: 10px;
+}
+
+.suit {
+  font-weight: 900;
+  font-size: 36px;
+  padding: 10px 0 0 10px;
+}
+
+.main--suit {
+  font-weight: 900;
+  font-size: 80px;
+}
+
+.card--red {
+  color: red;
+}
+
+// Hover
+
+.card:hover > .front {
+  visibility: hidden;
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+  visibility: visible;
+  transform: perspective(600px) rotateY(0deg);
+}
